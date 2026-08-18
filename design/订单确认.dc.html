@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-6 bg-gradient-to-b from-[#eef4fb] to-[#f0f5fb]" data-screen-label="订单确认">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-3 sticky top-0 z-40 flex items-center gap-3 shadow-[0_1px_0_rgba(11,60,120,.06)]">
+    <a href="购物车.dc.html" class="w-9 h-9 rounded-xl bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#0b7ce6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <div>
+      <div class="text-xs text-[#7a90a8]"><a href="首页.dc.html" class="text-[#7a90a8]">首頁</a> › 訂單確認</div>
+      <h1 class="m-0 text-[20px] font-black text-[#12233d]">訂單確認</h1>
+    </div>
+  </header>
+
+  <!-- 步骤条 van-steps -->
+  <div class="mx-3 mt-3 bg-white rounded-2xl px-6 py-4">
+    <div class="flex items-center">
+      <span class="w-9 h-9 rounded-full border-2 border-[#dbe7f5] text-[#9db1c7] font-bold flex items-center justify-center text-sm shrink-0">1</span>
+      <i class="flex-1 h-[2px] bg-[#0b7ce6]"></i>
+      <span class="w-9 h-9 rounded-full border-2 border-[#0b7ce6] text-[#0b7ce6] font-bold flex items-center justify-center text-sm shrink-0">2</span>
+      <i class="flex-1 h-[2px] bg-[#dbe7f5]"></i>
+      <span class="w-9 h-9 rounded-full border-2 border-[#dbe7f5] text-[#9db1c7] font-bold flex items-center justify-center text-sm shrink-0">3</span>
+    </div>
+    <div class="flex justify-between mt-2 text-center">
+      <span class="text-[13px] text-[#9db1c7] w-20 -ml-5">我的購物車</span>
+      <span class="text-[13px] font-bold text-[#0b7ce6] w-20">訂單確認</span>
+      <span class="text-[13px] text-[#9db1c7] w-20 -mr-5">建立/付款</span>
+    </div>
+  </div>
+
+  <!-- 收货地址 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
+    <div class="flex items-center gap-2">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 18 C10 18 4 12.5 4 8 A6 6 0 0 1 16 8 C16 12.5 10 18 10 18 Z" stroke="#0b7ce6" stroke-width="1.6"></path><circle cx="10" cy="8" r="2.2" stroke="#0b7ce6" stroke-width="1.6"></circle></svg>
+      <h2 class="m-0 text-[17px] font-black text-[#12233d]">收貨地址</h2>
+      <button class="ml-auto text-[12px] font-bold text-[#0b7ce6] border border-[#bcd9f7] rounded-lg px-3 py-1 bg-white" style="font-family:'Noto Sans TC',sans-serif">新增</button>
+    </div>
+    <div class="mt-3 border-[1.5px] border-[#0b7ce6] bg-[#f3f9ff] rounded-xl p-3 relative">
+      <div class="text-[13px] leading-relaxed text-[#26415f]">姓名:蔡莉莉<br>郵遞區號:52445<br>地址:台北市台灣路 88 號 10F<br>電話:886-2-31564750</div>
+      <button class="absolute top-3 right-3 text-[12px] font-bold text-[#0b7ce6] border border-[#bcd9f7] rounded-lg px-3 py-1 bg-white" style="font-family:'Noto Sans TC',sans-serif">編輯</button>
+      <span class="absolute right-3 top-11 bg-[#0b7ce6] text-white text-[11px] font-bold rounded-full px-2.5 py-1 flex items-center gap-1"><i class="w-1.5 h-1.5 rounded-full bg-white"></i>已選擇</span>
+    </div>
+    <div class="mt-2.5 border border-[#e6eef7] rounded-xl p-3 relative">
+      <div class="text-[13px] leading-relaxed text-[#26415f]">姓名:張莉<br>郵遞區號:056600<br>地址:新北市板橋區文化路<br>電話:1399248015</div>
+      <button class="absolute top-3 right-3 text-[12px] font-bold text-[#0b7ce6] border border-[#bcd9f7] rounded-lg px-3 py-1 bg-white" style="font-family:'Noto Sans TC',sans-serif">編輯</button>
+    </div>
+  </section>
+
+  <!-- 国际物流 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
+    <div class="flex items-center gap-2">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#0b7ce6" stroke-width="1.6"></circle><path d="M2.5 10 H17.5 M10 2.5 C7 5.5 7 14.5 10 17.5 C13 14.5 13 5.5 10 2.5" stroke="#0b7ce6" stroke-width="1.6"></path></svg>
+      <h2 class="m-0 text-[17px] font-black text-[#12233d]">國際物流</h2>
+    </div>
+    <div class="mt-3 border-[1.5px] border-[#0b7ce6] bg-[#f3f9ff] rounded-xl p-3 relative">
+      <img src="assets/logo-sgx.png" alt="SGXpress" class="h-8 w-auto">
+      <span class="absolute right-3 top-3 bg-[#0b7ce6] text-white text-[11px] font-bold rounded-full px-2.5 py-1 flex items-center gap-1"><i class="w-1.5 h-1.5 rounded-full bg-white"></i>選擇</span>
+      <div class="text-[12px] leading-relaxed text-[#3d5573] mt-2">物流渠道:台灣空運免材積優惠配<br>配送時間:台灣空運免材積配/申報限額:0 日元</div>
+    </div>
+  </section>
+
+  <!-- 可选服务 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
+    <div class="flex items-center gap-2">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2 L17 5 V10 C17 14 14 17 10 18 C6 17 3 14 3 10 V5 Z" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><path d="M7 10 L9 12 L13.5 7.5" stroke="#0b7ce6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <h2 class="m-0 text-[17px] font-black text-[#12233d]">可選服務</h2>
+      <svg class="ml-auto" width="14" height="9" viewBox="0 0 14 9"><path d="M1 1 L7 7.5 L13 1" stroke="#7a90a8" stroke-width="1.8" fill="none" stroke-linecap="round"></path></svg>
+    </div>
+    <p class="text-[12px] text-[#e02929] mt-2.5 mb-0">* 該服務費用會在國際物流付款時產生並付款,不在本次採購時付款。</p>
+    <div class="mt-3 border-[1.5px] border-[#0b7ce6] bg-[#f3f9ff] rounded-xl p-3 flex items-center">
+      <div class="text-[13px] leading-relaxed"><b class="text-[#0b7ce6]">服務:檢品</b><br><span class="text-[#7a90a8] text-[12px]">詳情:取出價格明細<br>單價:0 日元</span></div>
+      <span class="ml-auto bg-[#0b7ce6] text-white text-[12px] font-bold rounded-full px-3 py-1.5 flex items-center gap-1.5"><i class="w-4 h-4 rounded-full bg-white flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 L5.5 10.5 L11.5 3.5" stroke="#0b7ce6" stroke-width="2" stroke-linecap="round"></path></svg></i>已選擇</span>
+    </div>
+    <div class="mt-2.5 border border-[#e6eef7] rounded-xl p-3 flex items-center">
+      <div class="text-[13px] leading-relaxed"><b class="text-[#26415f]">服務:外箱氣泡袋加固</b><br><span class="text-[#7a90a8] text-[12px]">詳情:30 日元/選用後將由人員確認<br>單價:300 日元</span></div>
+      <span class="ml-auto border border-[#c8d8ea] text-[#3d5573] text-[12px] rounded-full px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap"><i class="w-4 h-4 rounded-full border-[1.5px] border-[#c8d8ea]"></i>選擇服務</span>
+    </div>
+    <div class="mt-2.5 border border-[#e6eef7] rounded-xl p-3 flex items-center">
+      <div class="text-[13px] leading-relaxed"><b class="text-[#26415f]">服務:無損加固</b><br><span class="text-[#7a90a8] text-[12px]">詳情:使用氣柱袋或紙板加固<br>單價:100 日元</span></div>
+      <span class="ml-auto border border-[#c8d8ea] text-[#3d5573] text-[12px] rounded-full px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap"><i class="w-4 h-4 rounded-full border-[1.5px] border-[#c8d8ea]"></i>選擇服務</span>
+    </div>
+    <div class="mt-2.5 border border-[#e6eef7] rounded-xl p-3 flex items-center">
+      <div class="text-[13px] leading-relaxed"><b class="text-[#26415f]">服務:去除包裝紙</b><br><span class="text-[#7a90a8] text-[12px]">詳情:去除商品外包裝內的廣告紙<br>單價:0 日元</span></div>
+      <span class="ml-auto border border-[#c8d8ea] text-[#3d5573] text-[12px] rounded-full px-3 py-1.5 flex items-center gap-1.5 whitespace-nowrap"><i class="w-4 h-4 rounded-full border-[1.5px] border-[#c8d8ea]"></i>選擇服務</span>
+    </div>
+  </section>
+
+  <!-- 选购商品 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
+    <div class="flex items-center gap-2 border-b-2 border-[#12233d] pb-3">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg>
+      <h2 class="m-0 text-[17px] font-black text-[#12233d]">選購商品</h2>
+    </div>
+    <img src="assets/logo-mercari.png" alt="mercari" class="h-7 w-auto mt-3">
+    <div class="flex items-center gap-1.5 text-[13px] text-[#26415f] border-t border-[#eef4fb] mt-2.5 pt-2.5"><i class="w-2.5 h-2.5 rounded-full bg-[#e02929]"></i>賣家:3児のパパ</div>
+    <div class="flex gap-3 mt-2.5">
+      <a href="商品详情.dc.html"><img src="assets/cart-bose.png" alt="" class="w-[64px] h-[64px] rounded-lg object-cover border border-[#eef4fb]"></a>
+      <div class="text-[13px] leading-relaxed min-w-0">
+        <b class="text-[#12233d] text-[14px]">Bose QuietComfort 45 降噪耳機</b><br>
+        <span class="text-[#3d5573]">價格:<b class="text-[#e02929]">¥32,000</b> <span class="text-[#7a90a8] text-[11px]">(約NT$6,850)</span></span><br>
+        <span class="text-[#3d5573]">數量:1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 优惠券/积分 van-cell -->
+  <a href="使用优惠券.dc.html" class="mx-3 mt-3 bg-white rounded-2xl p-3.5 flex items-center gap-2">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M2 6 A2 2 0 0 0 4 4 H16 A2 2 0 0 0 18 6 V9 A1.5 1.5 0 0 0 18 12 V14 A2 2 0 0 0 16 16 H4 A2 2 0 0 0 2 14 V12 A1.5 1.5 0 0 0 2 9 Z" stroke="#e02929" stroke-width="1.5"></path><path d="M8 8 L12 12 M12 8 L8 12" stroke="#e02929" stroke-width="1.5" stroke-linecap="round"></path></svg>
+    <b class="text-[16px] font-black text-[#12233d]">選擇優惠券</b>
+    <span class="ml-auto text-[13px] text-[#0b7ce6] font-medium">可用 1 張 ›</span>
+  </a>
+  <div class="mx-3 mt-3 bg-white rounded-2xl p-3.5 flex items-center gap-2">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2 L12.4 7 L18 7.8 L14 11.7 L15 17.2 L10 14.6 L5 17.2 L6 11.7 L2 7.8 L7.6 7 Z" stroke="#f0a13a" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+    <b class="text-[16px] font-black text-[#12233d]">會員積分使用</b>
+    <span class="ml-auto text-[13px] text-[#0b7ce6] font-medium">可用 300 點 ›</span>
+  </div>
+
+  <!-- 付款明细 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <h2 class="m-0 text-[18px] font-black text-[#12233d]">付款明細</h2>
+    <div class="flex justify-between mt-3 text-[14px]"><span class="text-[#3d5573]">商品價格</span><b class="text-[#12233d]">NT$6,850</b></div>
+    <div class="flex justify-between mt-2.5 text-[14px]"><span class="text-[#3d5573]">代購手續費</span><b class="text-[#12233d]">NT$0</b></div>
+    <div class="flex justify-between mt-2.5 text-[14px]"><span class="text-[#3d5573]">額外服務費</span><b class="text-[#12233d]">NT$120</b></div>
+    <div class="flex justify-between mt-2.5 text-[14px]"><span class="text-[#3d5573]">優惠券使用</span><b class="text-[#e02929]">-NT$0</b></div>
+    <div class="flex justify-between mt-2.5 text-[14px]"><span class="text-[#3d5573]">會員點數使用</span><b class="text-[#e02929]">-NT$0</b></div>
+  </section>
+
+  <!-- 总价+支付 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <div class="text-[15px] font-bold text-[#12233d]">付款總價</div>
+    <div class="mt-1"><b class="text-[26px] font-black text-[#e02929]">NT$6,970</b> <span class="text-[12px] text-[#7a90a8]">(約 ¥31,682日元)</span></div>
+    <button id="payBtn" class="w-full mt-3.5 bg-[#e8434f] text-white font-bold text-[17px] rounded-xl py-3.5 border-none shadow-[0_4px_12px_rgba(232,67,79,.35)]" style="font-family:'Noto Sans TC',sans-serif" onClick="{{ openPay }}">帳單支付</button>
+  </section>
+
+  <!-- 支付方式弹窗 van-action-sheet -->
+  <sc-if value="{{ payOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="fixed inset-0 z-[80] bg-black/40" onClick="{{ closePay }}"></div>
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white rounded-t-3xl z-[90] p-5 pb-8">
+      <div class="flex items-start">
+        <div><b class="text-[20px] font-black text-[#12233d]">選擇付款方式</b><div class="text-[13px] text-[#7a90a8] mt-1">應付金額 NT$6,970</div></div>
+        <span class="ml-auto w-8 h-8 rounded-full bg-[#eef4fb] text-[#3d5573] flex items-center justify-center cursor-pointer" onClick="{{ closePay }}">✕</span>
+      </div>
+      <button class="w-full mt-4 bg-[#0b7ce6] text-white font-bold text-[16px] rounded-xl py-3.5 border-none flex items-center justify-center gap-2" style="font-family:'Noto Sans TC',sans-serif"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="#fff" stroke-width="1.6"></rect><path d="M2 8 H18" stroke="#fff" stroke-width="1.6"></path></svg>信用卡付款</button>
+      <div class="text-right text-[12px] text-[#7a90a8] mt-1.5">付款手續費 2%</div>
+      <button class="w-full mt-2 bg-[#e8202e] text-white font-bold text-[16px] rounded-xl py-3.5 border-none flex items-center justify-center gap-2" style="font-family:'Noto Sans TC',sans-serif"><i class="w-6 h-6 rounded-md bg-white/25 text-white text-[13px] font-black flex items-center justify-center not-italic">街</i>街口支付</button>
+      <div class="text-right text-[12px] text-[#7a90a8] mt-1.5">付款手續費 1.5%</div>
+      <button class="w-full mt-2 bg-[#fdc844] text-[#12233d] font-bold text-[16px] rounded-xl py-3.5 border-none flex items-center justify-center gap-2" style="font-family:'Noto Sans TC',sans-serif"><b class="text-[#003087] italic text-lg">P</b>PayPal</button>
+      <div class="text-right text-[12px] text-[#7a90a8] mt-1.5">付款手續費 3.8%</div>
+      <button class="w-full mt-2 bg-[#f5a623] text-white font-bold text-[16px] rounded-xl py-3.5 border-none flex items-center justify-center gap-2" style="font-family:'Noto Sans TC',sans-serif"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 8 L10 3 L17 8 M4 8 V16 H16 V8 M8 16 V11 H12 V16" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"></path></svg>帳戶付款</button>
+      <div class="text-right text-[12px] text-[#7a90a8] mt-1.5">使用帳戶餘額</div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { payOpen: false };
+  renderVals() {
+    return {
+      payOpen: this.state.payOpen,
+      openPay: () => this.setState({ payOpen: true }),
+      closePay: () => this.setState({ payOpen: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

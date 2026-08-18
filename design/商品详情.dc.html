@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+.no-scrollbar::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-[150px] bg-gradient-to-b from-[#eaf3fd] to-[#f0f5fb]" data-screen-label="商品详情">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-2.5 sticky top-0 z-50 flex items-center gap-2">
+    <a href="商品列表.dc.html" class="shrink-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <span class="flex-1"></span>
+    <img src="assets/logo.png" alt="TokyoDoor" class="h-8 w-auto">
+    <span class="flex items-center gap-1 bg-[#eef4fb] rounded-full px-2.5 py-1 text-[11px] text-[#3d5573] whitespace-nowrap"><i class="w-[7px] h-[7px] rounded-full bg-[#e02929]"></i>¥1 ≈ NT$0.21</span>
+    <span class="flex-1"></span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 12 V3 M6.5 6 L10 2.5 L13.5 6" stroke="#12233d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 10 V16 H16 V10" stroke="#12233d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    <img src="assets/ic-menu.png" alt="選單" class="h-7 w-auto ml-1">
+  </header>
+
+  <!-- 主图:设计稿原图 van-swipe -->
+  <img src="assets/pd-hero.png" alt="商品主圖" class="w-full block">
+
+  <!-- 标题价格卡 -->
+  <section class="mx-3 -mt-2 relative bg-white rounded-2xl p-3.5 shadow-[0_2px_10px_rgba(11,60,120,.06)]">
+    <div class="flex items-center gap-2">
+      <i class="w-[3px] self-stretch bg-[#e02929] rounded"></i>
+      <span class="border border-[#f0c1c1] text-[#bf0000] font-black text-[13px] rounded-lg px-2 py-0.5 italic">Rakuten</span>
+      <span class="text-xs text-[#7a90a8] truncate">商品 ID:book:11201985</span>
+      <span class="ml-auto shrink-0 flex items-center gap-1 bg-[#e8f2fd] text-[#0b7ce6] text-xs font-bold rounded-full px-2.5 py-1">文A 翻譯</span>
+    </div>
+    <h1 class="m-0 mt-2.5 text-[17px] leading-relaxed font-bold text-[#12233d]">風の谷のナウシカ(7巻セット)トルメキア戦役バージョン(アニメージュコミックスワイド版)</h1>
+    <div class="flex items-center bg-[#fdf3f3] rounded-xl px-3 py-2.5 mt-3">
+      <b class="text-[26px] font-black text-[#e02929]">923 TWD</b>
+      <span class="text-xs text-[#7a90a8] ml-2">約 4,367 JPY</span>
+      <span class="ml-auto text-[11px] text-[#7a90a8]">匯率依結帳當下為準</span>
+    </div>
+    <div class="flex items-center justify-between border-t border-[#eef4fb] mt-3 pt-3">
+      <span class="text-[13px] text-[#3d5573]">商家名稱</span>
+      <span class="text-[13px] font-bold text-[#12233d] flex items-center gap-2">樂天ブックス <a href="商品列表.dc.html" class="text-[11px] font-bold border border-[#0b7ce6] rounded-full px-2 py-0.5">前往</a></span>
+    </div>
+    <div class="flex items-center justify-between mt-3">
+      <span class="text-[13px] text-[#3d5573]">購買數量</span>
+      <span class="flex items-center border border-[#c8d8ea] rounded-lg overflow-hidden">
+        <button class="w-9 h-8 bg-[#f4f8fc] text-[#3d5573] border-none text-base">−</button>
+        <span class="w-10 text-center text-sm font-bold text-[#12233d]">1</span>
+        <button class="w-9 h-8 bg-[#f4f8fc] text-[#0b7ce6] border-none text-base">+</button>
+      </span>
+    </div>
+  </section>
+
+  <!-- 注意事项 -->
+  <section class="mx-3 mt-3 bg-[#fdf1f1] border border-[#f5d5d5] rounded-2xl p-3.5 text-[12px] leading-relaxed text-[#c04545]">
+    <div>· 報價後 48 小時內請完成付款,未完成付款視為不接受報價。</div>
+    <div>· 免服務費/送拍照服務/國際運費首重免運費。</div>
+    <div>· 如有任何問題,請聯繫 LINE 線上客服。</div>
+  </section>
+
+  <!-- 运费信息:设计稿原图 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-2 overflow-hidden"><img src="assets/pd-ship.png" alt="日本國內運費 免運費|國際運費 首重免運 續重¥80/100g|抵達日本倉 3-5天" class="w-full block"></section>
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-2 overflow-hidden"><img src="assets/pd-route.png" alt="日本 → TokyoDoor → 台灣" class="w-full block"></section>
+
+  <!-- 描述 tabs van-tabs -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
+    <div class="grid grid-cols-4 gap-2">
+      <span class="text-center text-[12px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-lg py-1.5">商品描述</span>
+      <span class="text-center text-[12px] text-[#3d5573] border border-[#e6eef7] rounded-lg py-1.5">購物須知</span>
+      <span class="text-center text-[12px] text-[#3d5573] border border-[#e6eef7] rounded-lg py-1.5">翻譯</span>
+      <span class="text-center text-[12px] text-[#3d5573] border border-[#e6eef7] rounded-lg py-1.5">原網頁</span>
+    </div>
+    <p class="text-[13px] leading-relaxed text-[#26415f] mt-3 mb-0">トルメキア戦役バージョン アニメージュコミックスワイド版 德間書店 BKSC PN_【book_festival—th】【myroom】<br>發行年月:2003年10月|頁數:7冊|ISBN:9784192100106</p>
+  </section>
+
+  <!-- 代购保障:设计稿原图 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
+    <div class="flex items-center gap-1.5"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2 L17 5 V10 C17 14 14 17 10 18 C6 17 3 14 3 10 V5 Z" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><path d="M7 10 L9 12 L13.5 7.5" stroke="#0b7ce6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><h2 class="m-0 text-[17px] font-black text-[#12233d]">TokyoDoor 代購保障</h2></div>
+    <img src="assets/pd-guarantee.png" alt="正品代購/入庫拍照/合箱寄送/快速配送/專業服務/貼心售後" class="w-full block mt-3">
+  </section>
+
+  <!-- 五步完成 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl px-3.5 py-4">
+    <div class="flex items-baseline gap-2">
+      <h2 class="m-0 text-[17px] font-black text-[#12233d]">五步完成日本代購</h2>
+      <span class="text-[11px] text-[#7a90a8]">向左滑動,查看後續步驟</span>
+      <span class="ml-auto flex gap-1 items-center"><i class="w-4 h-[5px] rounded bg-[#e02929]"></i><i class="w-[5px] h-[5px] rounded bg-[#0b7ce6]"></i></span>
+    </div>
+    <div class="flex gap-3 mt-3.5 overflow-x-auto no-scrollbar">
+      <img src="assets/step-1.png" alt="找商品" class="shrink-0 w-[112px] h-auto">
+      <img src="assets/step-2.png" alt="下訂單" class="shrink-0 w-[112px] h-auto">
+      <img src="assets/step-3.png" alt="到日本倉" class="shrink-0 w-[112px] h-auto">
+    </div>
+  </section>
+
+  <!-- 底部操作栏 van-goods-action -->
+  <div class="fixed bottom-[64px] left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-[#e6eef7] flex items-center gap-2.5 px-3 py-2.5 z-[60]">
+    <span class="text-center shrink-0 w-10"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="mx-auto"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" fill="#e02929"></path></svg><span class="block text-[10px] text-[#3d5573] mt-0.5">收藏</span></span>
+    <span class="text-center shrink-0 w-10"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="mx-auto"><path d="M10 3 C5.5 3 2.5 5.8 2.5 9.2 C2.5 11.2 3.6 12.9 5.3 14 L4.8 17 L8 15.3 C8.6 15.4 9.3 15.5 10 15.5 C14.5 15.5 17.5 12.6 17.5 9.2 C17.5 5.8 14.5 3 10 3 Z" stroke="#06c755" stroke-width="1.6" stroke-linejoin="round"></path></svg><span class="block text-[10px] text-[#06c755] mt-0.5 font-bold">客服</span></span>
+    <a href="购物车.dc.html" class="flex-1 text-center border-[1.5px] border-[#0b7ce6] text-[#0b7ce6] font-bold text-[15px] rounded-xl py-2.5">加入購物車</a>
+    <a href="订单确认.dc.html" class="flex-1 text-center bg-[#0b7ce6] text-white font-bold text-[15px] rounded-xl py-2.5 shadow-[0_3px_8px_rgba(11,124,230,.35)]">立即購買</a>
+  </div>
+
+  <!-- 底部 TabBar van-tabbar -->
+  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-[#e6eef7] flex pt-1.5 pb-2 z-[60]">
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-home.png" alt="" class="h-[24px] w-auto mx-auto"><span class="block text-[10px] mt-0.5 font-bold text-[#0b7ce6]">首頁</span></a>
+    <a href="分类.dc.html" class="flex-1 text-center"><img src="assets/tab-grid.png" alt="" class="h-[24px] w-auto mx-auto"><span class="block text-[10px] mt-0.5 text-[#7a90a8]">分類</span></a>
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-freebuy.png" alt="" class="h-[24px] w-auto mx-auto"><span class="block text-[10px] mt-0.5 text-[#7a90a8]">自由購</span></a>
+    <a href="购物车.dc.html" class="flex-1 text-center"><img src="assets/tab-cart.png" alt="" class="h-[24px] w-auto mx-auto"><span class="block text-[10px] mt-0.5 text-[#7a90a8]">購物車</span></a>
+    <a href="我的.dc.html" class="flex-1 text-center"><img src="assets/tab-user.png" alt="" class="h-[24px] w-auto mx-auto"><span class="block text-[10px] mt-0.5 text-[#7a90a8]">我的</span></a>
+  </nav>
+</div>
+</x-dc>
+</body>
+</html>

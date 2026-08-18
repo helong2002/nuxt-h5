@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder{color:#9db1c7}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative bg-[#f0f5fb]" data-screen-label="登录">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-3.5 flex items-center relative">
+    <a href="首页.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <img src="assets/logo.png" alt="TokyoDoor" class="h-8 w-auto absolute left-1/2 -translate-x-1/2">
+    <span class="ml-auto flex items-center gap-1 bg-[#eef4fb] rounded-full px-2.5 py-1 text-[11px] text-[#3d5573]"><i class="w-[7px] h-[7px] rounded-full bg-[#e02929]"></i>¥1 ≈ NT$0.21</span>
+  </header>
+
+  <div class="px-5 pt-10">
+    <!-- 欢迎:吉祥物原图 -->
+    <div class="flex items-center gap-5">
+      <img src="assets/login-mascot.png" alt="TokyoDoor 客服娘" class="w-[108px] h-[108px] rounded-full object-cover shrink-0">
+      <div><h1 class="m-0 text-[30px] font-black text-[#12233d]">歡迎回來</h1><div class="text-[14px] text-[#7a90a8] mt-1.5">登入後即可管理訂單與收藏</div></div>
+    </div>
+
+    <!-- 表单 van-field -->
+    <label class="block text-[15px] font-bold text-[#12233d] mt-9">電子郵件或手機號碼</label>
+    <div class="flex items-center gap-2.5 bg-white border border-[#dbe7f5] rounded-2xl px-3.5 mt-2">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.2" stroke="#7a90a8" stroke-width="1.6"></circle><path d="M4 17 C4 13.5 6.5 12 10 12 C13.5 12 16 13.5 16 17" stroke="#7a90a8" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      <input type="text" placeholder="請輸入電子郵件或手機號碼" class="flex-1 border-none outline-none text-[14px] h-[52px] bg-transparent min-w-0">
+    </div>
+    <label class="block text-[15px] font-bold text-[#12233d] mt-5">密碼</label>
+    <div class="flex items-center gap-2.5 bg-white border border-[#dbe7f5] rounded-2xl px-3.5 mt-2">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="8.5" width="12" height="8" rx="1.5" stroke="#7a90a8" stroke-width="1.6"></rect><path d="M6.5 8.5 V6.5 a3.5 3.5 0 0 1 7 0 V8.5" stroke="#7a90a8" stroke-width="1.6"></path></svg>
+      <input type="password" placeholder="請輸入密碼" class="flex-1 border-none outline-none text-[14px] h-[52px] bg-transparent min-w-0">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10 C4 6 7 4 10 4 C13 4 16 6 18 10 C16 14 13 16 10 16 C7 16 4 14 2 10 Z" stroke="#7a90a8" stroke-width="1.5"></path><circle cx="10" cy="10" r="2.4" stroke="#7a90a8" stroke-width="1.5"></circle></svg>
+    </div>
+    <div class="flex items-center mt-4">
+      <span class="flex items-center gap-2 text-[14px] text-[#26415f]"><i class="w-[22px] h-[22px] rounded-md border-[1.5px] border-[#0b7ce6] bg-white"></i>記住我</span>
+      <a href="登录.dc.html" class="ml-auto text-[14px] font-medium">忘記密碼?</a>
+    </div>
+
+    <a href="我的.dc.html" class="block mt-6 bg-[#0b7ce6] text-white text-center font-bold text-[19px] rounded-2xl py-4 shadow-[0_5px_16px_rgba(11,124,230,.4)]">登入</a>
+
+    <div class="flex items-center gap-3 mt-8"><i class="flex-1 h-px bg-[#d5e2f0]"></i><span class="text-[13px] text-[#7a90a8]">或使用以下方式登入</span><i class="flex-1 h-px bg-[#d5e2f0]"></i></div>
+
+    <div class="grid grid-cols-2 gap-3 mt-5">
+      <button class="flex items-center justify-center gap-2 bg-white border-[1.5px] border-[#06c755] rounded-2xl py-3.5 text-[17px] font-medium text-[#06c755]" style="font-family:'Noto Sans TC',sans-serif"><span class="w-8 h-8 rounded-full bg-[#06c755] text-white text-[10px] font-black flex items-center justify-center">LINE</span>LINE</button>
+      <button class="flex items-center justify-center gap-2 bg-white border-[1.5px] border-[#bcd9f7] rounded-2xl py-3.5 text-[17px] font-medium text-[#1877f2]" style="font-family:'Noto Sans TC',sans-serif"><span class="w-8 h-8 rounded-full bg-[#1877f2] text-white text-[18px] font-black flex items-center justify-center">f</span>Facebook</button>
+    </div>
+
+    <div class="text-center text-[14px] text-[#26415f] mt-8 pb-10">還沒有帳號? <a href="登录.dc.html" class="font-bold">立即註冊</a></div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

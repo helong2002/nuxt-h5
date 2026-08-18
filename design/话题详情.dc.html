@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder{color:#9db1c7}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-8 bg-gradient-to-b from-[#eaf3fd] to-[#f0f5fb]" data-screen-label="话题详情">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-3 sticky top-0 z-50 flex items-center">
+    <a href="每日话题.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <b class="absolute left-1/2 -translate-x-1/2 text-[18px] font-black text-[#12233d]">每日話題</b>
+    <span class="ml-auto flex items-center gap-4">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" stroke="#3d5573" stroke-width="1.6"></path></svg>
+      <svg class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" onClick="{{ openShare }}"><path d="M10 12 V3 M6.5 6 L10 2.5 L13.5 6" stroke="#3d5573" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 10 V16 H16 V10" stroke="#3d5573" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </span>
+  </header>
+
+  <!-- 文章卡 -->
+  <article class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <div class="flex items-center"><span class="text-[12px] font-bold text-[#e0512e] bg-[#fdeae5] rounded-full px-2.5 py-1">聯名合作</span><span class="ml-auto text-[12px] text-[#9db1c7]">2026-08-05 10:36:00</span></div>
+    <h1 class="m-0 mt-3 text-[22px] leading-snug font-black text-[#12233d]">莉可麗絲 × meagratia 聯名服飾代購免郵活動</h1>
+    <div class="flex flex-wrap gap-2 mt-3">
+      <span class="text-[12px] text-[#3d5573] bg-[#eef4fb] rounded-full px-2.5 py-1">#莉可麗絲</span>
+      <span class="text-[12px] text-[#3d5573] bg-[#eef4fb] rounded-full px-2.5 py-1">#meagratia</span>
+      <span class="text-[12px] text-[#3d5573] bg-[#eef4fb] rounded-full px-2.5 py-1">#日本聯名</span>
+      <span class="text-[12px] text-[#3d5573] bg-[#eef4fb] rounded-full px-2.5 py-1">#限定服飾</span>
+      <span class="text-[12px] text-[#3d5573] bg-[#eef4fb] rounded-full px-2.5 py-1">#動漫周邊</span>
+    </div>
+    <p class="text-[14px] leading-relaxed text-[#26415f] mt-3 mb-0">人氣動畫《莉可麗絲》攜手日本品牌 meagratia,推出以錦木千束與井之上瀧奈為靈感的限定系列。活動情報、購買方式與代購重點一次整理。</p>
+    <!-- 影片:设计稿原图 -->
+    <div class="relative mt-3.5 rounded-xl overflow-hidden">
+      <img src="assets/topic-video.png" alt="聯名活動影片" class="w-full block">
+      <span class="absolute top-2.5 right-2.5 bg-black/45 text-white text-[11px] rounded-full px-2.5 py-1">活動影片</span>
+      <span class="absolute bottom-2.5 left-2.5 bg-black/45 text-white text-[11px] rounded-full px-2.5 py-1">點擊播放聯名活動影片</span>
+    </div>
+    <div class="grid grid-cols-3 border border-[#eef4fb] rounded-xl mt-3.5 py-3 text-center">
+      <div class="border-r border-[#eef4fb]"><div class="text-[12px] text-[#7a90a8]">活動期間</div><b class="text-[14px] text-[#12233d]">10.01–10.31</b></div>
+      <div class="border-r border-[#eef4fb]"><div class="text-[12px] text-[#7a90a8]">日本國內運費</div><b class="text-[14px] text-[#e02929]">限時免運</b></div>
+      <div><div class="text-[12px] text-[#7a90a8]">代購服務</div><b class="text-[14px] text-[#0b7ce6]">可直接下單</b></div>
+    </div>
+  </article>
+
+  <!-- 优惠券条:设计稿原图 -->
+  <a href="优惠券中心.dc.html" class="block mx-3 mt-3 rounded-xl overflow-hidden"><img src="assets/topic-coupon.png" alt="聯名服飾限定優惠券 NT$100 領取" class="w-full block"></a>
+
+  <!-- 文章内容 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 4 H9 V16 H3 Z M11 4 H17 V16 H11 Z" stroke="#0b7ce6" stroke-width="1.5"></path></svg><b class="text-[17px] font-black text-[#12233d]">文章內容</b></div>
+    <p class="text-[14px] leading-loose text-[#26415f] mt-3 mb-0">本次聯名以俐落的黑、灰色系為主,將角色意象低調地織入襯衫、吊帶與裙裝細節。無論想收藏角色周邊,或是尋找能日常搭配的日本服飾,都很適合列入關注清單。</p>
+    <div class="border-l-[3px] border-[#e02929] bg-[#fdf1f1] rounded-r-xl p-3 mt-3 text-[13px] text-[#c04545]"><b>提醒:</b>限定商品可能因店鋪與尺寸不同而有庫存差異,送出訂單前可先透過客服確認。</div>
+    <p class="text-[14px] leading-loose text-[#26415f] mt-3 mb-0">TokyoDoor 可協助完成日本下單、到倉檢查與寄送台灣。只要貼上日本商品連結,即可建立代購需求。</p>
+  </section>
+
+  <!-- 图片集 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <div class="flex items-center"><b class="text-[17px] font-black text-[#12233d]">圖片集</b><span class="text-[12px] text-[#9db1c7] ml-2">點選縮圖查看聯名細節</span><span class="ml-auto text-[13px] font-bold text-[#0b7ce6]">4 張</span></div>
+    <img src="assets/topic-hero.png" alt="聯名主視覺" class="w-full rounded-xl mt-3 object-cover aspect-[16/10]">
+    <div class="grid grid-cols-4 gap-2 mt-2.5">
+      <img src="assets/topic-hero.png" alt="" class="w-full aspect-square object-cover rounded-lg border-2 border-[#0b7ce6]">
+      <img src="assets/topic-video.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]">
+      <img src="assets/th-chiikawa.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]">
+      <img src="assets/th-sanrio.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]">
+    </div>
+  </section>
+
+  <!-- 猜你喜欢 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <div class="flex items-center"><b class="text-[17px] font-black text-[#12233d]">猜你喜歡</b><span class="text-[12px] text-[#9db1c7] ml-2">精選相似日本好物,左右滑動查看更多</span></div>
+    <div class="flex gap-2.5 mt-3 overflow-x-auto" style="scrollbar-width:none">
+      <a href="商品详情.dc.html" class="shrink-0 w-[104px]"><img src="assets/th-chiikawa.png" alt="" class="w-full aspect-square object-cover rounded-xl border border-[#eef4fb]"><span class="block text-[12px] text-[#26415f] mt-1.5 truncate">聯名吊帶襯衫</span><b class="text-[13px] font-black text-[#e02929]">¥15,400</b></a>
+      <a href="商品详情.dc.html" class="shrink-0 w-[104px]"><img src="assets/th-mary.png" alt="" class="w-full aspect-square object-cover rounded-xl border border-[#eef4fb]"><span class="block text-[12px] text-[#26415f] mt-1.5 truncate">灰色聯名裙裝</span><b class="text-[13px] font-black text-[#e02929]">¥13,200</b></a>
+      <a href="商品详情.dc.html" class="shrink-0 w-[104px]"><img src="assets/th-sanrio.png" alt="" class="w-full aspect-square object-cover rounded-xl border border-[#eef4fb]"><span class="block text-[12px] text-[#26415f] mt-1.5 truncate">角色主題裝飾</span><b class="text-[13px] font-black text-[#e02929]">¥9,800</b></a>
+      <a href="商品详情.dc.html" class="shrink-0 w-[104px]"><img src="assets/th-top10.png" alt="" class="w-full aspect-square object-cover rounded-xl border border-[#eef4fb]"><span class="block text-[12px] text-[#26415f] mt-1.5 truncate">莉可麗絲收藏組</span><b class="text-[13px] font-black text-[#e02929]">¥5,144</b></a>
+    </div>
+  </section>
+
+  <!-- 留言与评论 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3 C5.5 3 2.5 5.8 2.5 9.2 C2.5 11.2 3.6 12.9 5.3 14 L4.8 17 L8 15.3 C8.6 15.4 9.3 15.5 10 15.5 C14.5 15.5 17.5 12.6 17.5 9.2 C17.5 5.8 14.5 3 10 3 Z" stroke="#0b7ce6" stroke-width="1.5"></path></svg><b class="text-[17px] font-black text-[#12233d]">留言與評論</b><span class="text-[12px] text-[#9db1c7]">一起聊聊這次的日本好物</span><span class="ml-auto text-[12px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-full px-2 py-0.5">2 則</span></div>
+    <div class="flex gap-2.5 mt-3.5">
+      <span class="w-9 h-9 rounded-full bg-[#fdeaea] text-[#e0512e] text-[13px] font-bold flex items-center justify-center shrink-0">小</span>
+      <div class="flex-1 bg-[#f7fafd] rounded-xl p-3"><div class="flex"><b class="text-[13px] text-[#12233d]">小林</b><span class="ml-auto text-[11px] text-[#9db1c7]">2 小時前</span></div><div class="text-[13px] text-[#26415f] mt-1">這次聯名的灰色款真的很耐看,已經先收藏準備下單!</div></div>
+    </div>
+    <div class="flex gap-2.5 mt-2.5">
+      <span class="w-9 h-9 rounded-full bg-[#fdf0da] text-[#d8a24a] text-[13px] font-bold flex items-center justify-center shrink-0">M</span>
+      <div class="flex-1 bg-[#f7fafd] rounded-xl p-3"><div class="flex"><b class="text-[13px] text-[#12233d]">Mina</b><span class="ml-auto text-[11px] text-[#9db1c7]">昨天</span></div><div class="text-[13px] text-[#26415f] mt-1">想請問台灣大約多久可以收到?優惠券也已經領取了。</div></div>
+    </div>
+    <div class="flex gap-2 mt-3.5">
+      <span class="w-9 h-9 rounded-full bg-[#0b7ce6] text-white text-[13px] font-bold flex items-center justify-center shrink-0">我</span>
+      <input type="text" placeholder="說說你的想法…" class="flex-1 border border-[#dbe7f5] rounded-xl px-3 text-[13px] outline-none min-w-0">
+      <button class="bg-[#0b7ce6] text-white text-[13px] font-bold rounded-xl px-4 border-none" style="font-family:'Noto Sans TC',sans-serif">發布</button>
+    </div>
+  </section>
+
+  <!-- 分享弹窗 van-share-sheet -->
+  <sc-if value="{{ shareOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="fixed inset-0 z-[80] bg-black/40" onClick="{{ closeShare }}"></div>
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white rounded-t-3xl z-[90] p-5 pb-8">
+      <i class="block w-12 h-1.5 rounded bg-[#dbe7f5] mx-auto -mt-1"></i>
+      <div class="flex items-start mt-3">
+        <div><b class="text-[20px] font-black text-[#12233d]">分享這篇話題</b><div class="text-[13px] text-[#7a90a8] mt-1">把日本限定情報分享給朋友</div></div>
+        <span class="ml-auto w-8 h-8 rounded-full bg-[#eef4fb] text-[#3d5573] flex items-center justify-center cursor-pointer" onClick="{{ closeShare }}">✕</span>
+      </div>
+      <div class="flex gap-3 items-center border border-[#e6eef7] rounded-2xl p-3 mt-4">
+        <img src="assets/topic-video.png" alt="" class="w-[74px] h-[52px] rounded-lg object-cover shrink-0">
+        <div class="min-w-0"><b class="block text-[13px] text-[#12233d] truncate">莉可麗絲 × meagratia 聯名服飾代購免郵活動</b><span class="text-[12px] text-[#9db1c7]">tokyodoor.com/topic/255</span></div>
+      </div>
+      <div class="grid grid-cols-4 mt-5 text-center">
+        <div><span class="w-[52px] h-[52px] rounded-full bg-[#1877f2] text-white text-[24px] font-black flex items-center justify-center mx-auto">f</span><span class="block text-[13px] text-[#3d5573] mt-2">Facebook</span></div>
+        <div><span class="w-[52px] h-[52px] rounded-full bg-[#111] text-white text-[22px] font-black flex items-center justify-center mx-auto">𝕏</span><span class="block text-[13px] text-[#3d5573] mt-2">X</span></div>
+        <div><span class="w-[52px] h-[52px] rounded-full bg-[#06c755] text-white text-[12px] font-black flex items-center justify-center mx-auto">LINE</span><span class="block text-[13px] text-[#3d5573] mt-2">LINE</span></div>
+        <div><span class="w-[52px] h-[52px] rounded-full bg-white border border-[#e6eef7] text-[22px] font-black flex items-center justify-center mx-auto"><b class="text-[#4285f4]">G</b></span><span class="block text-[13px] text-[#3d5573] mt-2">Google</span></div>
+      </div>
+      <button class="w-full mt-5 border-[1.5px] border-[#bcd9f7] bg-white text-[#0b7ce6] font-bold text-[15px] rounded-xl py-3 flex items-center justify-center gap-2" style="font-family:'Noto Sans TC',sans-serif"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M8 12 L12 8 M7 9 a3 3 0 0 1 0-4.2 l1.8-1.8 a3 3 0 0 1 4.2 4.2 M13 11 a3 3 0 0 1 0 4.2 l-1.8 1.8 a3 3 0 0 1-4.2-4.2" stroke="#0b7ce6" stroke-width="1.6" stroke-linecap="round"></path></svg>複製文章連結</button>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { shareOpen: false };
+  renderVals() {
+    return {
+      shareOpen: this.state.shareOpen,
+      openShare: () => this.setState({ shareOpen: true }),
+      closeShare: () => this.setState({ shareOpen: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

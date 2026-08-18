@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder{color:#9db1c7}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative bg-[#f0f5fb]" data-screen-label="搜索">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 pt-3.5 pb-4">
+    <div class="flex items-center relative">
+      <a href="首页.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      <b class="absolute left-1/2 -translate-x-1/2 text-[20px] font-black text-[#12233d]">搜尋商品</b>
+    </div>
+    <div class="flex items-center mt-4">
+      <span class="flex items-center gap-1.5 border border-[#c8d8ea] rounded-xl px-3 py-2 text-[13px] text-[#26415f] bg-white">全部分類 <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1 L5 5 L9 1" stroke="#7a90a8" stroke-width="1.5" fill="none"></path></svg></span>
+      <span class="ml-auto flex items-center gap-4 text-[13px]">
+        <span class="flex items-center gap-1.5 text-[#12233d] font-medium"><i class="w-[18px] h-[18px] rounded-full bg-[#0b7ce6] flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 L5.5 10.5 L11.5 3.5" stroke="#fff" stroke-width="2" stroke-linecap="round"></path></svg></i>全部</span>
+        <span class="flex items-center gap-1.5 text-[#9db1c7]"><i class="w-[18px] h-[18px] rounded-full border-[1.5px] border-[#c8d8ea]"></i>新品</span>
+        <span class="flex items-center gap-1.5 text-[#9db1c7]"><i class="w-[18px] h-[18px] rounded-full border-[1.5px] border-[#c8d8ea]"></i>二手</span>
+      </span>
+    </div>
+    <div class="flex gap-2 mt-3">
+      <div class="flex-1 flex items-center gap-2 border-[1.5px] border-[#c8d8ea] rounded-xl px-2.5 bg-white min-w-0">
+        <img src="assets/ic-search.png" alt="" class="w-[18px] h-[18px]">
+        <input type="text" placeholder="搜尋日本商品、品牌或貼上網址" class="flex-1 border-none outline-none text-[13px] h-10 bg-transparent min-w-0">
+        <img src="assets/ic-trans.png" alt="原/譯" class="h-6 w-auto shrink-0">
+      </div>
+      <a href="商品列表.dc.html" class="bg-[#0b7ce6] text-white rounded-xl text-[15px] font-bold px-[18px] leading-[42px] shadow-[0_3px_8px_rgba(11,124,230,.35)]">搜尋</a>
+    </div>
+  </header>
+
+  <!-- 搜索历史 -->
+  <section class="mx-3 mt-3.5 bg-white rounded-2xl p-4">
+    <div class="flex items-center"><b class="text-[17px] font-black text-[#12233d]">搜尋歷史</b><span class="ml-auto w-9 h-9 rounded-xl bg-[#eef4fb] flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 6 H16 M8 6 V4 H12 V6 M6 6 L7 17 H13 L14 6" stroke="#3d5573" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></div>
+    <div class="flex flex-wrap gap-2.5 mt-3">
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] bg-[#f0f5fb] rounded-lg px-3.5 py-2">吉伊卡哇 玩偶</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] bg-[#f0f5fb] rounded-lg px-3.5 py-2">任天堂 Switch</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] bg-[#f0f5fb] rounded-lg px-3.5 py-2">資生堂限定彩妝</a>
+    </div>
+  </section>
+
+  <!-- 热门关键词 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <div class="flex items-baseline"><b class="text-[17px] font-black text-[#12233d]">熱門關鍵詞</b><span class="text-[12px] text-[#9db1c7] ml-2">大家都在找的日本好物</span><span class="ml-auto text-[13px] font-medium text-[#0b7ce6] flex items-center gap-1"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><path d="M4 10 a6 6 0 1 1 2 4.5 M4 10 V6 M4 10 H8" stroke="#0b7ce6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>換一批</span></div>
+    <div class="flex flex-wrap gap-2.5 mt-3">
+      <a href="商品列表.dc.html" class="text-[13px] font-bold text-[#0b7ce6] bg-[#e8f2fd] border border-[#bcd9f7] rounded-lg px-3.5 py-2">初音未來</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] border border-[#e2ebf5] rounded-lg px-3.5 py-2">遊戲軟體</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] border border-[#e2ebf5] rounded-lg px-3.5 py-2">LIZ LISA</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] border border-[#e2ebf5] rounded-lg px-3.5 py-2">航海王卡牌</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] border border-[#e2ebf5] rounded-lg px-3.5 py-2">吉伊卡哇</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] border border-[#e2ebf5] rounded-lg px-3.5 py-2">角落小夥伴</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] border border-[#e2ebf5] rounded-lg px-3.5 py-2">三麗鷗</a>
+      <a href="商品列表.dc.html" class="text-[13px] text-[#26415f] border border-[#e2ebf5] rounded-lg px-3.5 py-2">BEYBLADE X</a>
+    </div>
+  </section>
+</div>
+</x-dc>
+</body>
+</html>

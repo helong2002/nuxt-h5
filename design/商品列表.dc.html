@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder{color:#9db1c7}
+.no-scrollbar::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-[76px] bg-gradient-to-b from-[#eaf3fd] to-[#f0f5fb]" data-screen-label="商品列表">
+  <!-- 顶部搜索 van-nav-bar + van-search -->
+  <header class="bg-white px-3.5 py-2.5 sticky top-0 z-50 flex items-center gap-2.5">
+    <a href="分类.dc.html" class="shrink-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <div class="flex-1 flex items-center gap-2 border-[1.5px] border-[#c8d8ea] rounded-xl px-2.5 bg-white min-w-0">
+      <img src="assets/ic-search.png" alt="" class="w-[18px] h-[18px]">
+      <input type="text" placeholder="搜尋日本商品、品牌或貼上網址" class="flex-1 border-none outline-none text-[13px] h-10 bg-transparent min-w-0">
+      <img src="assets/ic-trans.png" alt="原/譯" class="h-6 w-auto shrink-0">
+    </div>
+    <button class="bg-[#0b7ce6] text-white rounded-xl text-[15px] font-bold px-4 h-[42px] shadow-[0_3px_8px_rgba(11,124,230,.35)]" style="font-family:'Noto Sans TC',sans-serif">搜尋</button>
+  </header>
+
+  <!-- 平台 chips:设计稿原图 -->
+  <div class="px-2 pt-2.5">
+    <div class="flex items-center gap-1.5 px-2 text-[14px] font-bold text-[#12233d]"><i class="w-2.5 h-2.5 rounded-full bg-[#e02929]"></i>日本購物平台</div>
+    <img src="assets/list-chips.png" alt="全部 | mercari | Rakuma | Sundrug | Rakuten | 01World | ZOZOTOWN" class="w-full h-auto mt-1.5">
+  </div>
+
+  <!-- 排序栏 van-dropdown-menu -->
+  <div class="flex items-center gap-4 px-4 py-2">
+    <span class="text-[14px] font-bold text-[#12233d]">綜合排序</span>
+    <span class="text-[13px] text-[#7a90a8]">最新</span>
+    <span class="text-[13px] text-[#7a90a8]">銷量</span>
+    <span class="text-[13px] text-[#7a90a8] flex items-center gap-0.5">價格<svg width="9" height="14" viewBox="0 0 9 14"><path d="M4.5 1 L8 5 H1 Z" fill="#c4d5e8"></path><path d="M4.5 13 L1 9 H8 Z" fill="#c4d5e8"></path></svg></span>
+    <span class="ml-auto flex items-center gap-1 border border-[#c8d8ea] rounded-lg px-2.5 py-1 text-[12px] text-[#3d5573] bg-white">新台幣 <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1 L5 5 L9 1" stroke="#7a90a8" stroke-width="1.5" fill="none"></path></svg></span>
+  </div>
+
+  <!-- 人气商品 -->
+  <div class="flex items-center px-4 pt-1.5 pb-1">
+    <span class="text-lg mr-1.5">🔥</span>
+    <h1 class="m-0 text-[19px] font-black text-[#12233d]">人氣商品</h1>
+    <a href="商品列表.dc.html" class="ml-auto text-[13px] font-medium">查看更多 ›</a>
+  </div>
+
+  <div class="grid grid-cols-2 gap-2.5 px-3 mt-1.5">
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block shadow-[0_2px_8px_rgba(11,60,120,.05)]">
+      <img src="assets/prod-bose.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3">
+        <div class="text-sm text-[#12233d] font-medium truncate">Bose QuietComfort 45 降噪耳機</div>
+        <div class="flex items-end gap-1.5 mt-1.5">
+          <div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$6,850</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥32,000</div></div>
+          <span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span>
+        </div>
+      </div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block shadow-[0_2px_8px_rgba(11,60,120,.05)]">
+      <img src="assets/prod-sony.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3">
+        <div class="text-sm text-[#12233d] font-medium truncate">Sony A7IV 數位相機單機身</div>
+        <div class="flex items-end gap-1.5 mt-1.5">
+          <div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$65,000</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥310,000</div></div>
+          <span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span>
+        </div>
+      </div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block shadow-[0_2px_8px_rgba(11,60,120,.05)]">
+      <img src="assets/prod-switch.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3">
+        <div class="text-sm text-[#12233d] font-medium truncate">Nintendo Switch OLED 白色</div>
+        <div class="flex items-end gap-1.5 mt-1.5">
+          <div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$8,200</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥37,980</div></div>
+          <span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span>
+        </div>
+      </div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block shadow-[0_2px_8px_rgba(11,60,120,.05)]">
+      <img src="assets/prod-seiko.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3">
+        <div class="text-sm text-[#12233d] font-medium truncate">Seiko Presage 機械錶 限量版</div>
+        <div class="flex items-end gap-1.5 mt-1.5">
+          <div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$11,800</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥55,000</div></div>
+          <span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span>
+        </div>
+      </div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block shadow-[0_2px_8px_rgba(11,60,120,.05)]">
+      <img src="assets/prod-yunth.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3">
+        <div class="text-sm text-[#12233d] font-medium truncate">日本直送 春櫻限定美妝組</div>
+        <div class="flex items-end gap-1.5 mt-1.5">
+          <div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$1,480</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥6,800</div></div>
+          <span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span>
+        </div>
+      </div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block shadow-[0_2px_8px_rgba(11,60,120,.05)]">
+      <img src="assets/prod-conan.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3">
+        <div class="text-sm text-[#12233d] font-medium truncate">名偵探柯南 集換式卡牌盒裝</div>
+        <div class="flex items-end gap-1.5 mt-1.5">
+          <div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$1,180</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥5,400</div></div>
+          <span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- 底部 TabBar van-tabbar -->
+  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-[#e6eef7] flex pt-2 pb-3 z-[60]">
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-home-off.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">首頁</span></a>
+    <a href="分类.dc.html" class="flex-1 text-center"><img src="assets/tab-grid-on.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 font-bold text-[#0b7ce6]">分類</span></a>
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-freebuy.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">自由購</span></a>
+    <a href="购物车.dc.html" class="flex-1 text-center"><img src="assets/tab-cart.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">購物車</span></a>
+    <a href="我的.dc.html" class="flex-1 text-center"><img src="assets/tab-user.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">我的</span></a>
+  </nav>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative bg-[#eef4fb]" data-screen-label="使用运费优惠券">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-4 flex items-center gap-4 shadow-[0_1px_0_rgba(11,60,120,.06)]">
+    <a href="优惠券中心.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <h1 class="m-0 text-[19px] font-black text-[#12233d]">使用運費優惠券</h1>
+  </header>
+
+  <!-- 已选券卡:设计稿原图右块 -->
+  <div class="mx-3 mt-3.5 bg-white border-[1.5px] border-[#f0b8a8] rounded-2xl overflow-hidden flex">
+    <div class="flex-1 p-3.5 min-w-0 bg-gradient-to-r from-[#fdf3f0] to-white">
+      <span class="text-[12px] font-bold text-[#e0512e] bg-white border border-[#f0c9bc] rounded-full px-2.5 py-0.5">運費減免</span>
+      <b class="block text-[17px] font-black text-[#12233d] mt-2">日本代購國際運費券</b>
+      <div class="text-[12px] text-[#3d5573] mt-1.5">滿 NT$1,500 可使用 · 至 2026.08.31</div>
+    </div>
+    <img src="assets/coupon-ship100.png" alt="NT$100 已選擇" class="w-[112px] object-cover shrink-0">
+  </div>
+
+  <!-- 说明卡 -->
+  <div class="mx-3 mt-3 bg-white rounded-2xl p-4">
+    <b class="text-[16px] font-black text-[#12233d]">此券將在支付國際運費時自動套用</b>
+    <div class="text-[13px] text-[#3d5573] mt-1.5">完成商品代購後,符合條件的運費訂單將自動折抵。</div>
+  </div>
+  <div class="mx-3 mt-3 bg-[#e8f2fd] rounded-2xl p-4 flex gap-2.5">
+    <span class="w-5 h-5 rounded-full border-[1.5px] border-[#0b7ce6] text-[#0b7ce6] text-[12px] flex items-center justify-center shrink-0 font-bold">?</span>
+    <div class="min-w-0"><b class="text-[13px] font-bold text-[#0b7ce6]">使用說明</b><div class="text-[12px] text-[#3d5573] mt-1 leading-relaxed">優惠券僅限符合活動規則的商品使用,實際優惠金額將在訂單確認頁自動計算。</div></div>
+  </div>
+
+  <a href="订单确认.dc.html" class="block mx-3 mt-4 bg-[#0b7ce6] text-white text-center font-bold text-[16px] rounded-xl py-3.5 shadow-[0_4px_12px_rgba(11,124,230,.35)]">我知道了</a>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder{color:#9db1c7}
+.no-scrollbar::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-[76px] bg-white" data-screen-label="分类">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 pt-2.5 pb-3 sticky top-0 z-50 border-b border-[#eef4fb]">
+    <div class="flex items-center gap-2">
+      <a href="首页.dc.html" class="shrink-0 text-[#12233d]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      <span class="flex-1"></span>
+      <img src="assets/logo.png" alt="TokyoDoor" class="h-8 w-auto">
+      <span class="flex items-center gap-1 bg-[#eef4fb] rounded-full px-2.5 py-1 text-[11px] text-[#3d5573] whitespace-nowrap ml-1"><i class="w-[7px] h-[7px] rounded-full bg-[#e02929]"></i>¥1 ≈ NT$0.21</span>
+      <span class="flex-1"></span>
+      <img src="assets/ic-menu.png" alt="選單" class="h-7 w-auto">
+    </div>
+    <div class="flex gap-2 mt-2.5">
+      <a href="搜索.dc.html" class="flex-1 flex items-center gap-2 border-[1.5px] border-[#c8d8ea] rounded-xl px-2.5 bg-white min-w-0">
+        <img src="assets/ic-search.png" alt="" class="w-[18px] h-[18px]">
+        <span class="flex-1 text-[13px] h-10 leading-10 text-[#9db1c7] truncate">搜尋日本商品、品牌或貼上網址</span>
+        <img src="assets/ic-trans.png" alt="原/譯" class="h-6 w-auto shrink-0">
+      </a>
+      <button class="bg-[#0b7ce6] text-white rounded-xl text-[15px] font-bold px-[18px] shadow-[0_3px_8px_rgba(11,124,230,.35)]" style="font-family:'Noto Sans TC',sans-serif">搜尋</button>
+    </div>
+  </header>
+
+  <div class="flex items-start">
+    <!-- 左侧分类 van-sidebar -->
+    <aside class="w-[92px] shrink-0 bg-[#f4f8fc] min-h-[70vh]">
+      <div class="relative bg-white py-4 text-center text-[13px] font-bold text-[#12233d]"><i class="absolute left-0 top-3 bottom-3 w-[3px] bg-[#e02929] rounded-r"></i>女裝服飾</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">男裝服飾</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">母嬰</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">動漫周邊</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">書籍影音</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">遊戲</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">3C數碼</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">居家生活</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">美妝保養</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">食品保健</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">運動戶外</div>
+      <div class="py-4 text-center text-[13px] text-[#3d5573]">興趣收藏</div>
+    </aside>
+    <!-- 右侧网格 -->
+    <main class="flex-1 min-w-0 px-3 py-3.5">
+      <div class="flex items-center">
+        <h1 class="m-0 text-[19px] font-black text-[#12233d]">女裝服飾</h1>
+        <span class="ml-auto text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-full px-2.5 py-1">日本直送</span>
+      </div>
+      <div class="grid grid-cols-3 gap-x-2.5 gap-y-4 mt-3.5">
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-top.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">上衣</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-coat.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">外套</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-pants.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">褲子</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-skirt.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">半身裙</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-dress.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">連衣裙</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-shoes.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">鞋子</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-bag.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">包包</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-under.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">睡衣/內衣</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-socks.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">襪子</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-hat.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">帽子</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-swim.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">泳裝</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-formal.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">正裝禮服</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-mat.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">孕婦裝</span></a>
+        <a href="商品列表.dc.html" class="text-center"><img src="assets/cat2-acc.png" alt="" class="w-full aspect-square object-cover rounded-lg border border-[#eef4fb]"><span class="block text-[13px] text-[#26415f] mt-1.5">配件</span></a>
+      </div>
+    </main>
+  </div>
+
+  <!-- 底部 TabBar van-tabbar -->
+  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-[#e6eef7] flex pt-2 pb-3 z-[60]">
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-home-off.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">首頁</span></a>
+    <a href="分类.dc.html" class="flex-1 text-center"><img src="assets/tab-grid-on.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 font-bold text-[#0b7ce6]">分類</span></a>
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-freebuy.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">自由購</span></a>
+    <a href="购物车.dc.html" class="flex-1 text-center"><img src="assets/tab-cart.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">購物車</span></a>
+    <a href="我的.dc.html" class="flex-1 text-center"><img src="assets/tab-user.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">我的</span></a>
+  </nav>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder{color:#9db1c7}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-8 bg-[#eef4fb]" data-screen-label="优惠券中心">
+  <!-- 蓝色头部 -->
+  <header class="bg-gradient-to-b from-[#0b6fdc] to-[#1287ec] px-3.5 pt-3 pb-16 relative overflow-hidden">
+    <i class="absolute -right-8 -top-10 w-40 h-40 rounded-full bg-white/10"></i>
+    <div class="flex items-center relative">
+      <a href="首页.dc.html" class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      <div class="absolute left-1/2 -translate-x-1/2 text-center">
+        <b class="text-white text-[20px] font-black">優惠券中心</b>
+        <div class="text-[11px] text-[#cfe4fb]">你的日本購物省錢小幫手</div>
+      </div>
+      <button class="ml-auto bg-white text-[#12233d] text-[13px] font-bold rounded-xl px-3.5 py-2 border-none flex items-center gap-1.5 relative" style="font-family:'Noto Sans TC',sans-serif" onClick="{{ openRedeem }}"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 6 A2 2 0 0 0 4 4 H16 A2 2 0 0 0 18 6 V9 A1.5 1.5 0 0 0 18 12 V14 A2 2 0 0 0 16 16 H4 A2 2 0 0 0 2 14 V12 A1.5 1.5 0 0 0 2 9 Z" stroke="#e02929" stroke-width="1.5"></path></svg>兌換<i class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#e02929]"></i></button>
+    </div>
+    <!-- 本月已省 -->
+    <div class="mt-4 bg-white/12 border border-white/25 rounded-2xl p-3.5 flex items-center gap-3 relative">
+      <span class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center"><svg width="22" height="22" viewBox="0 0 20 20" fill="none"><rect x="3" y="7" width="14" height="10" rx="1.5" stroke="#fff" stroke-width="1.5"></rect><path d="M2 5 H18 V8 H2 Z M10 5 V17 M10 5 C8 5 6 4 6 2.8 C6 1.8 7 1.5 8 2 C9 2.5 10 4 10 5 C10 4 11 2.5 12 2 C13 1.5 14 1.8 14 2.8 C14 4 12 5 10 5" stroke="#fff" stroke-width="1.5"></path></svg></span>
+      <div><span class="text-[13px] text-[#cfe4fb]">本月已省下</span> <b class="text-[24px] font-black text-white ml-1">NT$ 1,240</b><div class="text-[11px] text-[#cfe4fb] mt-0.5">結帳時自動套用最優惠券</div></div>
+      <div class="ml-auto bg-[#d43a45] rounded-xl px-3.5 py-2 text-center"><b class="text-white text-[20px] font-black block">4</b><span class="text-[10px] text-white/90">可用優惠券</span></div>
+    </div>
+  </header>
+
+  <!-- tabs van-tabs -->
+  <div class="mx-3 -mt-8 relative bg-white/80 backdrop-blur rounded-2xl p-1.5 grid grid-cols-3">
+    <span class="text-center text-[14px] font-bold text-[#0b7ce6] bg-white rounded-xl py-2.5 shadow-[0_2px_8px_rgba(11,60,120,.08)]">未使用 4</span>
+    <span class="text-center text-[14px] text-[#7a90a8] py-2.5">已使用 0</span>
+    <span class="text-center text-[14px] text-[#7a90a8] py-2.5">已過期 0</span>
+  </div>
+
+  <div class="flex items-end px-4 mt-4">
+    <div><b class="text-[18px] font-black text-[#12233d]">可使用優惠</b><div class="text-[12px] text-[#7a90a8] mt-0.5">下單時會自動套用最優惠方案</div></div>
+    <span class="ml-auto text-[12px] font-bold text-[#e02929]">限時優惠</span>
+  </div>
+
+  <!-- 商品优惠券组 -->
+  <div class="flex items-center gap-2 px-4 mt-3.5">
+    <span class="w-8 h-8 rounded-lg bg-[#fdeaea] flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 3 H16 V17 L13 15 L10 17 L7 15 L4 17 Z" stroke="#e02929" stroke-width="1.5" stroke-linejoin="round"></path></svg></span>
+    <div><b class="text-[15px] font-bold text-[#12233d]">商品優惠券</b><div class="text-[11px] text-[#7a90a8]">結帳時折抵商品金額</div></div>
+  </div>
+  <!-- 券卡 -->
+  <div class="mx-3 mt-2.5 bg-white rounded-2xl overflow-hidden flex shadow-[0_2px_10px_rgba(11,60,120,.06)]">
+    <div class="flex-1 p-3.5 min-w-0">
+      <div class="flex items-center gap-1.5"><b class="text-[#e0402e] font-black">m</b><span class="text-[12px] text-[#7a90a8]">商品折抵</span></div>
+      <b class="block text-[16px] font-black text-[#12233d] mt-1">Mercari 二手好物折抵券</b>
+      <div class="text-[12px] text-[#3d5573] mt-1">滿 ¥10,000 可使用</div>
+      <div class="text-[11px] text-[#9db1c7] mt-1.5">至 2026.09.30 <span class="ml-2 text-[#7a90a8]">規則 ›</span></div>
+    </div>
+    <div class="w-[118px] shrink-0 bg-gradient-to-br from-[#f2695c] to-[#f5a05c] text-center flex flex-col items-center justify-center relative">
+      <i class="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#eef4fb]"></i>
+      <b class="text-white text-[24px] font-black">¥700</b>
+      <span class="text-[10px] text-white/90">商品折抵</span>
+      <button class="mt-1.5 bg-white/25 text-white text-[12px] font-bold rounded-full px-4 py-1 border-none" style="font-family:'Noto Sans TC',sans-serif">去使用</button>
+    </div>
+  </div>
+  <div class="mx-3 mt-2.5 bg-white rounded-2xl overflow-hidden flex shadow-[0_2px_10px_rgba(11,60,120,.06)]">
+    <div class="flex-1 p-3.5 min-w-0">
+      <div class="flex items-center gap-1.5"><b class="text-[#bf0000] font-black">R</b><span class="text-[12px] text-[#7a90a8]">商品折抵</span></div>
+      <b class="block text-[16px] font-black text-[#12233d] mt-1">Rakuma 精選商店優惠券</b>
+      <div class="text-[12px] text-[#3d5573] mt-1">滿 ¥5,000 可使用</div>
+      <div class="text-[11px] text-[#9db1c7] mt-1.5">至 2026.08.20 <span class="ml-2 text-[#7a90a8]">規則 ›</span></div>
+    </div>
+    <div class="w-[118px] shrink-0 bg-gradient-to-br from-[#f2884f] to-[#f5c05c] text-center flex flex-col items-center justify-center relative">
+      <i class="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#eef4fb]"></i>
+      <b class="text-white text-[24px] font-black">¥300</b>
+      <span class="text-[10px] text-white/90">商品折抵</span>
+      <a href="使用优惠券.dc.html" class="mt-1.5 bg-white/25 text-white text-[12px] font-bold rounded-full px-4 py-1">去使用</a>
+    </div>
+  </div>
+
+  <!-- 运费券组 -->
+  <div class="flex items-center gap-2 px-4 mt-5">
+    <span class="w-8 h-8 rounded-lg bg-[#e8f2fd] flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M2 5 H12 V14 H2 Z M12 8 H15.5 L18 11 V14 H12" stroke="#0b7ce6" stroke-width="1.5" stroke-linejoin="round"></path><circle cx="6" cy="15.5" r="1.6" stroke="#0b7ce6" stroke-width="1.5"></circle><circle cx="14.5" cy="15.5" r="1.6" stroke="#0b7ce6" stroke-width="1.5"></circle></svg></span>
+    <div><b class="text-[15px] font-bold text-[#12233d]">國際運費券</b><div class="text-[11px] text-[#7a90a8]">支付國際運費時折抵</div></div>
+  </div>
+  <div class="mx-3 mt-2.5 bg-white rounded-2xl overflow-hidden flex shadow-[0_2px_10px_rgba(11,60,120,.06)]">
+    <div class="flex-1 p-3.5 min-w-0">
+      <div class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M2 14 L8 8 L11 11 L18 4 M18 4 V9 M18 4 H13" stroke="#0b7ce6" stroke-width="1.6"></path></svg><span class="text-[12px] text-[#7a90a8]">運費減免</span></div>
+      <b class="block text-[16px] font-black text-[#12233d] mt-1">日本代購國際運費券</b>
+      <div class="text-[12px] text-[#3d5573] mt-1">滿 NT$1,500 可使用</div>
+      <div class="text-[11px] text-[#9db1c7] mt-1.5">至 2026.08.31 <span class="ml-2 text-[#7a90a8]">規則 ›</span></div>
+    </div>
+    <div class="w-[118px] shrink-0 bg-gradient-to-br from-[#2f8fe8] to-[#5cb0f5] text-center flex flex-col items-center justify-center relative">
+      <i class="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#eef4fb]"></i>
+      <b class="text-white text-[22px] font-black">NT$100</b>
+      <span class="text-[10px] text-white/90">運費折抵</span>
+      <a href="使用优惠券.dc.html" class="mt-1.5 bg-white/25 text-white text-[12px] font-bold rounded-full px-4 py-1">去使用</a>
+    </div>
+  </div>
+  <div class="mx-3 mt-2.5 bg-white rounded-2xl overflow-hidden flex shadow-[0_2px_10px_rgba(11,60,120,.06)]">
+    <div class="flex-1 p-3.5 min-w-0">
+      <div class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 20 20" fill="none"><rect x="4" y="6" width="12" height="10" rx="1" stroke="#8a6a3a" stroke-width="1.5"></rect><path d="M4 9 H16 M10 6 V4" stroke="#8a6a3a" stroke-width="1.5"></path></svg><span class="text-[12px] text-[#7a90a8]">運費減免</span></div>
+      <b class="block text-[16px] font-black text-[#12233d] mt-1">EMS 國際配送 96 折券</b>
+      <div class="text-[12px] text-[#3d5573] mt-1">任意金額即可使用</div>
+      <div class="text-[11px] text-[#9db1c7] mt-1.5">至 2026.08.25 <span class="ml-2 text-[#7a90a8]">規則 ›</span></div>
+    </div>
+    <div class="w-[118px] shrink-0 bg-gradient-to-br from-[#3a7bd0] to-[#6aa8e8] text-center flex flex-col items-center justify-center relative">
+      <i class="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#eef4fb]"></i>
+      <b class="text-white text-[24px] font-black">9.6折</b>
+      <span class="text-[10px] text-white/90">運費折抵</span>
+      <a href="使用优惠券.dc.html" class="mt-1.5 bg-white/25 text-white text-[12px] font-bold rounded-full px-4 py-1">去使用</a>
+    </div>
+  </div>
+
+  <div class="text-center text-[12px] text-[#9db1c7] mt-6">更多驚喜優惠持續更新中</div>
+
+  <!-- 兑换弹窗 van-dialog -->
+  <sc-if value="{{ redeemOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="fixed inset-0 z-[80] bg-black/45" onClick="{{ closeRedeem }}"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[82%] max-w-[340px] bg-white rounded-3xl z-[90] p-6 text-center">
+      <i class="absolute left-6 top-5 w-5 h-5 rounded-full bg-[#f5c05c]"></i>
+      <i class="absolute left-16 top-14 w-2 h-2 rounded-full bg-[#8ec3f5]"></i>
+      <img src="assets/ic-ticket.png" alt="" class="w-14 h-14 mx-auto">
+      <b class="block text-[20px] font-black text-[#12233d] mt-2">兌換優惠券</b>
+      <div class="text-[13px] text-[#3d5573] mt-3">請輸入您的優惠券兌換碼</div>
+      <input type="text" placeholder="例如:TOKYO2026" class="w-full box-border border border-[#c8d8ea] rounded-xl px-3 py-2.5 text-center text-[14px] mt-3 outline-none">
+      <button class="w-full mt-4 bg-gradient-to-r from-[#2456e0] to-[#e0304a] text-white font-bold text-[16px] rounded-xl py-3 border-none" style="font-family:'Noto Sans TC',sans-serif" onClick="{{ redeem }}">立即兌換</button>
+    </div>
+  </sc-if>
+
+  <!-- 领取成功弹窗 -->
+  <sc-if value="{{ successOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="fixed inset-0 z-[80] bg-black/45" onClick="{{ closeSuccess }}"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[82%] max-w-[340px] bg-white rounded-3xl z-[90] p-6 text-center">
+      <i class="absolute right-6 top-5 w-5 h-5 rounded-full bg-[#f5c05c]"></i>
+      <i class="absolute right-16 top-14 w-2 h-2 rounded-full bg-[#8ec3f5]"></i>
+      <img src="assets/ic-ticket.png" alt="" class="w-14 h-14 mx-auto">
+      <b class="block text-[22px] font-black text-[#12233d] mt-2">領取成功</b>
+      <div class="text-[15px] text-[#26415f] mt-3">已領取 1 張優惠券</div>
+      <div class="text-[12px] text-[#7a90a8] mt-1">可至優惠券中心查看與使用</div>
+      <button class="w-full mt-4 bg-gradient-to-r from-[#2456e0] to-[#e0304a] text-white font-bold text-[16px] rounded-xl py-3 border-none" style="font-family:'Noto Sans TC',sans-serif" onClick="{{ closeSuccess }}">前往優惠券中心</button>
+    </div>
+    <span class="fixed top-[calc(50%+150px)] left-1/2 -translate-x-1/2 z-[90] w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3d5573] cursor-pointer" onClick="{{ closeSuccess }}">✕</span>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { redeemOpen: false, successOpen: false };
+  renderVals() {
+    return {
+      redeemOpen: this.state.redeemOpen,
+      successOpen: this.state.successOpen,
+      openRedeem: () => this.setState({ redeemOpen: true }),
+      closeRedeem: () => this.setState({ redeemOpen: false }),
+      redeem: () => this.setState({ redeemOpen: false, successOpen: true }),
+      closeSuccess: () => this.setState({ successOpen: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

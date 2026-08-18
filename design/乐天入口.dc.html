@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder{color:#9db1c7}
+.no-scrollbar::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-[76px] bg-gradient-to-b from-[#fdf5f5] via-[#f3f7fc] to-[#f0f5fb]" data-screen-label="乐天平台入口">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-3 sticky top-0 z-50 flex items-center relative">
+    <a href="首页.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <span class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2"><img src="assets/logo.png" alt="TokyoDoor" class="h-8 w-auto"><span class="flex items-center gap-1 bg-[#eef4fb] rounded-full px-2 py-1 text-[10px] text-[#3d5573]"><i class="w-1.5 h-1.5 rounded-full bg-[#e02929]"></i>¥1 ≈ NT$0.21</span></span>
+    <img src="assets/ic-menu.png" alt="選單" class="h-7 w-auto ml-auto">
+  </header>
+
+  <!-- 平台头 -->
+  <div class="px-4 pt-4 flex items-center gap-3 relative overflow-hidden">
+    <img src="assets/rk-logo.png" alt="樂天" class="w-14 h-14 rounded-xl object-cover shrink-0">
+    <div><div class="flex items-center gap-2"><b class="text-[24px] font-black text-[#12233d]">樂天</b><span class="text-[12px] font-bold text-[#0b7ce6]">官方入口</span></div><div class="text-[12px] text-[#7a90a8] mt-0.5">樂天官方店與人氣賣家的安心選購</div></div>
+    <b class="absolute right-2 top-4 text-[34px] font-black text-[#bf0000]/10 italic">Rakuten</b>
+  </div>
+
+  <!-- 搜索 -->
+  <div class="flex gap-2 px-3.5 mt-3.5">
+    <div class="flex-1 flex items-center gap-2 border-[1.5px] border-[#c8d8ea] rounded-xl px-2.5 bg-white min-w-0">
+      <img src="assets/ic-search.png" alt="" class="w-[18px] h-[18px]">
+      <input type="text" placeholder="搜尋日本商品、品牌或貼上網址" class="flex-1 border-none outline-none text-[13px] h-10 bg-transparent min-w-0">
+      <img src="assets/ic-trans.png" alt="原/譯" class="h-6 w-auto shrink-0">
+    </div>
+    <button class="bg-[#0b7ce6] text-white rounded-xl text-[15px] font-bold px-[18px] shadow-[0_3px_8px_rgba(11,124,230,.35)]" style="font-family:'Noto Sans TC',sans-serif">搜尋</button>
+  </div>
+
+  <!-- 热门分类:设计稿原图 -->
+  <section class="mx-3 mt-3.5 bg-white rounded-2xl px-3.5 py-4">
+    <div class="flex items-center"><b class="text-[17px] font-black text-[#12233d]">熱門分類</b><a href="分类.dc.html" class="ml-auto text-[13px] font-medium">查看全部 ›</a></div>
+    <img src="assets/rk-cats.png" alt="女裝服飾/男裝服飾/母嬰/動漫周邊/書籍影音" class="w-full h-auto mt-3">
+  </section>
+
+  <!-- 热门品牌:设计稿原图 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl px-3.5 py-4">
+    <div class="flex items-center"><b class="text-[17px] font-black text-[#12233d]">熱門品牌</b><a href="商品列表.dc.html" class="ml-auto text-[13px] font-medium">查看全部 ›</a></div>
+    <img src="assets/rk-brands.png" alt="DHC/LEGO/Kao/Canon/NISSIN" class="w-full h-auto mt-3 rounded-lg">
+  </section>
+
+  <!-- 推荐商店 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl px-3.5 py-4">
+    <div class="flex items-center"><b class="text-[17px] font-black text-[#12233d]">推薦商店</b><a href="商品列表.dc.html" class="ml-auto text-[13px] font-medium">查看全部 ›</a></div>
+    <div class="flex gap-2.5 mt-3 overflow-x-auto no-scrollbar">
+      <div class="shrink-0 flex items-center gap-2.5 border border-[#e6eef7] rounded-xl px-3 py-2.5"><span class="w-8 h-8 rounded-full bg-[#e8f2fd] text-[#0b7ce6] font-black flex items-center justify-center">1</span><div><b class="text-[14px] text-[#12233d]">Tokyo Select 店</b><div class="text-[11px] text-[#7a90a8]">好評 99% · 日本直送</div></div></div>
+      <div class="shrink-0 flex items-center gap-2.5 border border-[#e6eef7] rounded-xl px-3 py-2.5"><span class="w-8 h-8 rounded-full bg-[#fdeaea] text-[#e0512e] font-black flex items-center justify-center">2</span><div><b class="text-[14px] text-[#12233d]">日本嚴選商店</b><div class="text-[11px] text-[#7a90a8]">熱門商品 · 每日更新</div></div></div>
+      <div class="shrink-0 flex items-center gap-2.5 border border-[#e6eef7] rounded-xl px-3 py-2.5"><span class="w-8 h-8 rounded-full bg-[#eaf7ec] text-[#3f9e55] font-black flex items-center justify-center">3</span><div><b class="text-[14px] text-[#12233d]">安心官方店</b><div class="text-[11px] text-[#7a90a8]">正品保證</div></div></div>
+    </div>
+  </section>
+
+  <!-- 精选筛选 -->
+  <div class="flex items-center px-4 mt-4"><b class="text-[17px] font-black text-[#12233d]">樂天 精選商品</b><span class="ml-auto text-[12px] text-[#7a90a8]">由 TokyoDoor 代購</span></div>
+  <div class="flex items-center gap-2 px-3.5 mt-2.5 overflow-x-auto no-scrollbar">
+    <span class="text-[13px] font-bold text-[#e02929] bg-[#fdeaea] rounded-full px-3.5 py-1.5 whitespace-nowrap">推薦</span>
+    <span class="text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-full px-3.5 py-1.5 whitespace-nowrap">新品</span>
+    <span class="text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-full px-3.5 py-1.5 whitespace-nowrap">熱門</span>
+    <span class="text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-full px-3.5 py-1.5 whitespace-nowrap">限時優惠</span>
+    <span class="text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-full px-3.5 py-1.5 whitespace-nowrap">二手好物</span>
+    <span class="ml-auto shrink-0 flex items-center gap-1 border border-[#c8d8ea] rounded-lg px-2.5 py-1.5 text-[12px] text-[#3d5573] bg-white whitespace-nowrap">綜合排序 <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1 L5 5 L9 1" stroke="#7a90a8" stroke-width="1.5" fill="none"></path></svg></span>
+  </div>
+
+  <!-- 本周人气 -->
+  <div class="flex items-center px-4 mt-4"><span class="text-lg mr-1.5">🔥</span><b class="text-[18px] font-black text-[#12233d]">本週人氣</b><a href="商品列表.dc.html" class="ml-auto text-[13px] font-medium">查看更多 ›</a></div>
+  <div class="grid grid-cols-2 gap-2.5 px-3 mt-2.5">
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block">
+      <img src="assets/prod-bose.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3"><div class="text-sm text-[#12233d] font-medium truncate">Bose QuietComfort 45 降噪耳機</div><div class="flex items-end gap-1.5 mt-1.5"><div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$6,850</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥32,000</div></div><span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span></div></div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block">
+      <img src="assets/prod-sony.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3"><div class="text-sm text-[#12233d] font-medium truncate">Sony A7IV 數位相機單機身</div><div class="flex items-end gap-1.5 mt-1.5"><div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$65,000</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥310,000</div></div><span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span></div></div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block">
+      <img src="assets/prod-switch.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3"><div class="text-sm text-[#12233d] font-medium truncate">Nintendo Switch OLED 白色</div><div class="flex items-end gap-1.5 mt-1.5"><div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$8,200</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥37,980</div></div><span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span></div></div>
+    </a>
+    <a href="商品详情.dc.html" class="bg-white border border-[#e6eef7] rounded-2xl overflow-hidden block">
+      <img src="assets/prod-seiko.png" alt="" class="w-full aspect-[382/270] object-cover block">
+      <div class="px-2.5 pt-2.5 pb-3"><div class="text-sm text-[#12233d] font-medium truncate">Seiko Presage 機械錶 限量版</div><div class="flex items-end gap-1.5 mt-1.5"><div class="flex-1 min-w-0"><div class="text-[17px] font-black text-[#e02929]">NT$11,800</div><div class="text-[11px] text-[#7a90a8] mt-0.5">參考 ¥55,000</div></div><span class="w-[34px] h-[34px] rounded-[10px] bg-[#e8f2fd] flex items-center justify-center shrink-0"><svg width="17" height="17" viewBox="0 0 20 20" fill="none"><path d="M3 4 H5 L7 13 H15 L17 6 H6" stroke="#0b7ce6" stroke-width="1.6" stroke-linejoin="round"></path><circle cx="8" cy="16" r="1.3" fill="#0b7ce6"></circle><circle cx="14" cy="16" r="1.3" fill="#0b7ce6"></circle></svg></span></div></div>
+    </a>
+  </div>
+
+  <!-- 底部 TabBar(返回/首頁/分類/購物車) -->
+  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-[#e6eef7] flex pt-2 pb-3 z-[60]">
+    <a href="首页.dc.html" class="flex-1 text-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="mx-auto"><path d="M14 6 L8 12 L14 18 M8 12 H20" stroke="#7a90a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="block text-[11px] mt-0.5 text-[#7a90a8]">返回</span></a>
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-home.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 font-bold text-[#0b7ce6]">首頁</span></a>
+    <a href="分类.dc.html" class="flex-1 text-center"><img src="assets/tab-grid.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">分類</span></a>
+    <a href="购物车.dc.html" class="flex-1 text-center"><img src="assets/tab-cart.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">購物車</span></a>
+  </nav>
+</div>
+</x-dc>
+</body>
+</html>

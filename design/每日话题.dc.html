@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+.no-scrollbar::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-8 bg-gradient-to-b from-[#eaf3fd] to-[#f0f5fb]" data-screen-label="每日话题">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-3 sticky top-0 z-50 flex items-center gap-3">
+    <a href="首页.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <h1 class="m-0 text-[20px] font-black text-[#12233d]">每日話題 <span class="text-[12px] font-normal text-[#7a90a8]">日本好物、限定情報與日淘指南</span></h1>
+    <span class="ml-auto w-9 h-9 rounded-full bg-[#e8f2fd] flex items-center justify-center"><img src="assets/ic-search.png" alt="搜尋" class="w-4 h-4"></span>
+  </header>
+
+  <!-- 分类 chips van-tabs -->
+  <div class="grid grid-cols-4 gap-2 px-3 pt-3">
+    <span class="text-center text-[13px] font-bold text-white bg-[#0b7ce6] rounded-xl py-2 shadow-[0_3px_8px_rgba(11,124,230,.3)]">全部話題</span>
+    <span class="text-center text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-xl py-2">好物推薦</span>
+    <span class="text-center text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-xl py-2">聯名合作</span>
+    <span class="text-center text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-xl py-2">東京風向</span>
+    <span class="text-center text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-xl py-2">折扣情報</span>
+    <span class="text-center text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-xl py-2">生活方式</span>
+    <span class="text-center text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-xl py-2">限定速報</span>
+    <span class="text-center text-[13px] text-[#3d5573] bg-white border border-[#dbe7f5] rounded-xl py-2">日淘教程</span>
+  </div>
+
+  <!-- 头条:设计稿原图 -->
+  <a href="话题详情.dc.html" class="block mx-3 mt-3 rounded-2xl overflow-hidden relative shadow-[0_6px_18px_rgba(11,60,120,.15)]">
+    <img src="assets/topic-hero.png" alt="莉可麗絲 × meagratia 聯名服飾代購免郵活動" class="w-full block">
+    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c2c55]/95 to-transparent pt-10 pb-3.5 px-3.5">
+      <span class="text-[11px] text-white/80 bg-white/20 rounded-full px-2 py-0.5">聯名合作</span><span class="text-[11px] text-white/70 float-right mt-0.5">2025.10.01</span>
+      <b class="block text-white text-[17px] font-bold mt-1.5">莉可麗絲 × meagratia 聯名服飾代購免郵活動</b>
+      <div class="flex items-center mt-1.5"><span class="text-[13px] text-white font-medium">閱讀文章 ›</span><span class="ml-auto flex gap-1"><i class="w-4 h-1.5 rounded bg-[#e02929]"></i><i class="w-1.5 h-1.5 rounded bg-white/60"></i><i class="w-1.5 h-1.5 rounded bg-white/60"></i></span></div>
+    </div>
+  </a>
+
+  <!-- 文章列表 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl overflow-hidden">
+    <div class="flex items-center gap-4 px-4 py-3 border-b border-[#eef4fb] overflow-x-auto no-scrollbar">
+      <b class="text-[16px] font-black text-[#12233d] whitespace-nowrap">最新文章</b>
+      <span class="text-[13px] text-[#7a90a8] whitespace-nowrap">最熱文章</span>
+      <span class="text-[13px] text-[#7a90a8] whitespace-nowrap">收藏最多</span>
+      <span class="text-[13px] text-[#7a90a8] whitespace-nowrap">時間排序</span>
+      <span class="text-[13px] text-[#7a90a8] whitespace-nowrap">猜你喜歡</span>
+    </div>
+    <a href="话题详情.dc.html" class="flex gap-3 px-4 py-3.5 border-b border-[#eef4fb]">
+      <img src="assets/th-mary.png" alt="" class="w-[88px] h-[76px] rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start"><span class="text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-md px-2 py-0.5">限定速報</span><svg class="ml-auto shrink-0" width="18" height="18" viewBox="0 0 20 20"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" fill="#e02929"></path></svg></div>
+        <b class="block text-[14px] font-bold text-[#12233d] leading-snug mt-1">MARY QUANT 2026秋季限定彩妝今天開賣!Romantic Glow全系列整理</b>
+        <div class="text-[11px] text-[#9db1c7] mt-1">2026-08-04 10:51:00</div>
+      </div>
+    </a>
+    <a href="话题详情.dc.html" class="flex gap-3 px-4 py-3.5 border-b border-[#eef4fb]">
+      <img src="assets/th-skzoo.png" alt="" class="w-[88px] h-[76px] rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start"><span class="text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-md px-2 py-0.5">好物推薦</span><svg class="ml-auto shrink-0" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" stroke="#c4d5e8" stroke-width="1.5"></path></svg></div>
+        <b class="block text-[14px] font-bold text-[#12233d] leading-snug mt-1">SKZOO棒棒糖吊飾今天正式發售!全8款角色、價格與日本購買方式整理</b>
+        <div class="text-[11px] text-[#9db1c7] mt-1">2026-08-04 10:51:00</div>
+      </div>
+    </a>
+    <a href="话题详情.dc.html" class="flex gap-3 px-4 py-3.5 border-b border-[#eef4fb]">
+      <img src="assets/th-chiikawa.png" alt="" class="w-[88px] h-[76px] rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start"><span class="text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-md px-2 py-0.5">東京風向</span><svg class="ml-auto shrink-0" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" stroke="#c4d5e8" stroke-width="1.5"></path></svg></div>
+        <b class="block text-[14px] font-bold text-[#12233d] leading-snug mt-1">ちいかわTシャツ怎麼挑?吉伊卡哇夏日短袖款式、價格與日本代購整理</b>
+        <div class="text-[11px] text-[#9db1c7] mt-1">2026-08-04 10:51:00</div>
+      </div>
+    </a>
+    <a href="话题详情.dc.html" class="flex gap-3 px-4 py-3.5 border-b border-[#eef4fb]">
+      <img src="assets/th-sanrio.png" alt="" class="w-[88px] h-[76px] rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start"><span class="text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-md px-2 py-0.5">聯名合作</span><svg class="ml-auto shrink-0" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" stroke="#c4d5e8" stroke-width="1.5"></path></svg></div>
+        <b class="block text-[14px] font-bold text-[#12233d] leading-snug mt-1">三麗鷗平成復古系列登場!Thank You Mart 78款限定雜貨完整整理</b>
+        <div class="text-[11px] text-[#9db1c7] mt-1">2026-08-04 10:51:00</div>
+      </div>
+    </a>
+    <a href="话题详情.dc.html" class="flex gap-3 px-4 py-3.5 border-b border-[#eef4fb]">
+      <img src="assets/th-bunbo.png" alt="" class="w-[88px] h-[76px] rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start"><span class="text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-md px-2 py-0.5">生活方式</span><svg class="ml-auto shrink-0" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" stroke="#c4d5e8" stroke-width="1.5"></path></svg></div>
+        <b class="block text-[14px] font-bold text-[#12233d] leading-snug mt-1">《お文具といっしょ》× Belle Maison首次聯名!療癒系居家雜貨完整整理</b>
+        <div class="text-[11px] text-[#9db1c7] mt-1">2026-08-04 10:51:00</div>
+      </div>
+    </a>
+    <a href="话题详情.dc.html" class="flex gap-3 px-4 py-3.5 border-b border-[#eef4fb]">
+      <img src="assets/th-top10.png" alt="" class="w-[88px] h-[76px] rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start"><span class="text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-md px-2 py-0.5">好物推薦</span><svg class="ml-auto shrink-0" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" stroke="#c4d5e8" stroke-width="1.5"></path></svg></div>
+        <b class="block text-[14px] font-bold text-[#12233d] leading-snug mt-1">2026上半年台灣人喜愛的日本代購商品TOP 10:美容家電、吉伊卡哇到夏季小物</b>
+        <div class="text-[11px] text-[#9db1c7] mt-1">2026-08-04 10:51:00</div>
+      </div>
+    </a>
+    <a href="话题详情.dc.html" class="flex gap-3 px-4 py-3.5">
+      <img src="assets/th-nissin.png" alt="" class="w-[88px] h-[76px] rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start"><span class="text-[11px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-md px-2 py-0.5">生活方式</span><svg class="ml-auto shrink-0" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 17 C4 12.5 2.5 9 4.5 6.5 C6.2 4.4 9 4.8 10 7 C11 4.8 13.8 4.4 15.5 6.5 C17.5 9 16 12.5 10 17 Z" stroke="#c4d5e8" stroke-width="1.5"></path></svg></div>
+        <b class="block text-[14px] font-bold text-[#12233d] leading-snug mt-1">日清冷水杯麵登場!冷水5分鐘就能吃,雞鹽檸檬與微辣泡菜一次看</b>
+        <div class="text-[11px] text-[#9db1c7] mt-1">2026-08-04 10:51:00</div>
+      </div>
+    </a>
+  </section>
+</div>
+</x-dc>
+</body>
+</html>
