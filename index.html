@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TokyoDoor H5 设计稿预览</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Noto Sans TC", -apple-system, "Microsoft YaHei", sans-serif; background: #eef4fb; color: #12233d; padding: 32px 16px; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 22px; margin-bottom: 6px; }
+  p.sub { color: #7a90a8; font-size: 13px; margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  a.card { display: block; background: #fff; border: 1px solid #e6eef7; border-radius: 12px; padding: 14px 16px; text-decoration: none; color: #12233d; transition: box-shadow .15s, transform .15s; }
+  a.card:hover { box-shadow: 0 3px 8px rgba(11,124,230,.25); transform: translateY(-2px); }
+  a.card .name { font-weight: 700; font-size: 15px; }
+  a.card .route { color: #0b7ce6; font-size: 12px; margin-top: 4px; display: block; }
+  .tip { margin-top: 24px; font-size: 12px; color: #7a90a8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>TokyoDoor 日本代购 H5 · 设计稿预览</h1>
+  <p class="sub">15 个高保真页面 · 375 移动端设计宽度 · 建议用手机模式(F12 → 设备模拟)查看</p>
+  <div class="grid">
+    <a class="card" href="design/启动页.dc.html"><span class="name">启动页</span><span class="route">/splash</span></a>
+    <a class="card" href="design/首页.dc.html"><span class="name">首页</span><span class="route">/</span></a>
+    <a class="card" href="design/搜索.dc.html"><span class="name">搜索</span><span class="route">/search</span></a>
+    <a class="card" href="design/分类.dc.html"><span class="name">分类</span><span class="route">/category</span></a>
+    <a class="card" href="design/商品列表.dc.html"><span class="name">商品列表</span><span class="route">/goods/list</span></a>
+    <a class="card" href="design/商品详情.dc.html"><span class="name">商品详情</span><span class="route">/goods/:id</span></a>
+    <a class="card" href="design/购物车.dc.html"><span class="name">购物车</span><span class="route">/cart</span></a>
+    <a class="card" href="design/订单确认.dc.html"><span class="name">订单确认</span><span class="route">/order/confirm</span></a>
+    <a class="card" href="design/优惠券中心.dc.html"><span class="name">优惠券中心</span><span class="route">/coupon/center</span></a>
+    <a class="card" href="design/使用优惠券.dc.html"><span class="name">使用优惠券</span><span class="route">/coupon/use</span></a>
+    <a class="card" href="design/每日话题.dc.html"><span class="name">每日话题</span><span class="route">/topic/list</span></a>
+    <a class="card" href="design/话题详情.dc.html"><span class="name">话题详情</span><span class="route">/topic/:id</span></a>
+    <a class="card" href="design/登录.dc.html"><span class="name">登录</span><span class="route">/login</span></a>
+    <a class="card" href="design/我的.dc.html"><span class="name">我的</span><span class="route">/me</span></a>
+    <a class="card" href="design/乐天入口.dc.html"><span class="name">乐天入口</span><span class="route">/platform/rakuten</span></a>
+  </div>
+  <p class="tip">页面互链关系即路由跳转关系 · 详见仓库 README.md</p>
+</div>
+</body>
+</html>
