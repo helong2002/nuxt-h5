@@ -30,7 +30,7 @@ input::placeholder{color:#9db1c7}
       <span class="flex-1"></span>
       <a href="登录.dc.html" class="text-sm font-medium text-[#0c1b33]">登入</a>
       <a href="登录.dc.html" class="text-sm font-medium text-[#0c1b33]">註冊</a>
-      <img src="assets/ic-menu.png" alt="選單" class="h-7 w-auto ml-1">
+      <span class="relative ml-1 shrink-0"><img src="assets/ic-menu.png" alt="選單" class="h-7 w-auto"><i class="absolute -top-0.5 -right-1 w-2 h-2 rounded-full bg-[#e02929]"></i></span>
     </div>
     <!-- 搜索条 van-search -->
     <div class="flex gap-2 mt-2.5">
@@ -53,9 +53,13 @@ input::placeholder{color:#9db1c7}
     <span class="text-[#3d5573] text-[13px] px-2.5 py-1.5 whitespace-nowrap">日淘知識</span>
   </nav>
 
-  <!-- 主 banner:设计稿原图 -->
-  <div class="mx-3 mt-2.5 rounded-2xl overflow-hidden shadow-[0_6px_18px_rgba(11,60,120,.08)]">
-    <img src="assets/banner-free.png" alt="公測期間 全部免" class="w-full block">
+  <!-- 主 banner van-swipe:左右滑动 -->
+  <div class="mx-3 mt-2.5 rounded-2xl overflow-hidden shadow-[0_6px_18px_rgba(11,60,120,.08)] relative">
+    <div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory">
+      <img src="assets/banner-free.png" alt="公測期間 全部免" class="w-full shrink-0 snap-center block">
+      <img src="assets/banner-festival.png" alt="日本祭典季優惠" class="w-full shrink-0 snap-center block">
+    </div>
+    <span class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 items-center"><i class="w-3.5 h-1.5 rounded-full bg-white/90"></i><i class="w-1.5 h-1.5 rounded-full bg-white/50"></i></span>
   </div>
 
   <!-- 公告 van-notice-bar -->
@@ -172,6 +176,8 @@ input::placeholder{color:#9db1c7}
       <img src="assets/step-1.png" alt="找商品 搜尋或貼網址" class="shrink-0 w-[118px] h-auto">
       <img src="assets/step-2.png" alt="下訂單 支付商品費" class="shrink-0 w-[118px] h-auto">
       <img src="assets/step-3.png" alt="到日本倉 拍照確認" class="shrink-0 w-[118px] h-auto">
+      <img src="assets/step-4.png" alt="選配送 支付國際運費" class="shrink-0 w-[118px] h-auto">
+      <img src="assets/step-5.png" alt="安心收貨 簽收日本好物" class="shrink-0 w-[118px] h-auto">
     </div>
   </section>
 
@@ -188,9 +194,11 @@ input::placeholder{color:#9db1c7}
     </div>
   </section>
 
-  <!-- 自由购 -->
-  <div class="mx-3 mt-3.5 rounded-2xl p-3.5 relative bg-gradient-to-br from-[#0b64d8] to-[#0b7ce6] shadow-[0_8px_24px_rgba(11,80,180,.35)]">
-    <span class="absolute top-3 right-3 w-[26px] h-[26px] rounded-full bg-white/20 text-white flex items-center justify-center text-sm">✕</span>
+  <!-- 自由购:底部栏上方悬浮,✕ 可关闭 -->
+  <sc-if value="{{ freebuyOpen }}" hint-placeholder-val="{{ true }}">
+  <div class="fixed bottom-[76px] left-1/2 -translate-x-1/2 w-full max-w-[430px] px-3 box-border z-50">
+  <div class="rounded-2xl p-3.5 relative bg-gradient-to-br from-[#0b64d8] to-[#0b7ce6] shadow-[0_8px_24px_rgba(11,80,180,.35)]">
+    <span class="absolute top-3 right-3 w-[26px] h-[26px] rounded-full bg-white/20 text-white flex items-center justify-center text-sm cursor-pointer" onClick="{{ closeFreebuy }}">✕</span>
     <div class="flex items-center gap-2.5">
       <img src="assets/ic-freebuy.png" alt="" class="w-10 h-10 rounded-xl">
       <div><b class="text-white text-lg font-black">自由購</b><span class="text-[#cfe4fb] text-xs ml-2">日本好物一鍵代購</span></div>
@@ -202,9 +210,11 @@ input::placeholder{color:#9db1c7}
     </div>
     <div class="flex items-center mt-2.5 text-xs text-[#cfe4fb]">Rakuten · Amazon · Mercari<span class="ml-auto text-[#ffd8d8]">● 自動帶入資料</span></div>
   </div>
+  </div>
+  </sc-if>
 
   <!-- LINE 浮标 -->
-  <div class="fixed bottom-[150px] z-40" style="right:calc(50% - 215px + 14px)">
+  <div class="fixed bottom-[240px] z-40" style="right:calc(50% - 215px + 14px)">
     <img src="assets/line.png" alt="LINE" class="w-14 h-auto rounded-2xl shadow-[0_6px_18px_rgba(11,60,120,.2)]">
   </div>
 
@@ -218,5 +228,16 @@ input::placeholder{color:#9db1c7}
   </nav>
 </div>
 </x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { freebuyOpen: true };
+  renderVals() {
+    return {
+      freebuyOpen: this.state.freebuyOpen,
+      closeFreebuy: () => this.setState({ freebuyOpen: false }),
+    };
+  }
+}
+</script>
 </body>
 </html>
