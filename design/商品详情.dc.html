@@ -70,9 +70,39 @@ a:hover{color:#0966c2}
     <div>· 如有任何問題,請聯繫 LINE 線上客服。</div>
   </section>
 
-  <!-- 运费信息:设计稿原图 -->
-  <section class="mx-3 mt-3 bg-white rounded-2xl p-2 overflow-hidden"><img src="assets/pd-ship.png" alt="日本國內運費 免運費|國際運費 首重免運 續重¥80/100g|抵達日本倉 3-5天" class="w-full block"></section>
-  <section class="mx-3 mt-3 bg-white rounded-2xl p-2 overflow-hidden"><img src="assets/pd-route.png" alt="日本 → TokyoDoor → 台灣" class="w-full block"></section>
+  <!-- 运费信息(原生重建) -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl py-3.5 grid grid-cols-3">
+    <div class="text-center px-1 border-r border-[#eef4fb]">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none" class="mx-auto"><path d="M2 5 H12 V14 H2 Z M12 8 H15.5 L18 11 V14 H12" stroke="#0b7ce6" stroke-width="1.5" stroke-linejoin="round"></path><circle cx="6" cy="15.5" r="1.6" stroke="#0b7ce6" stroke-width="1.5"></circle><circle cx="14.5" cy="15.5" r="1.6" stroke="#0b7ce6" stroke-width="1.5"></circle></svg>
+      <div class="text-[12px] text-[#3d5573] mt-1.5">日本國內運費</div>
+      <div class="text-[13px] font-bold text-[#e02929] mt-1">免運費</div>
+    </div>
+    <div class="text-center px-1 border-r border-[#eef4fb]">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none" class="mx-auto"><circle cx="10" cy="10" r="7.5" stroke="#0b7ce6" stroke-width="1.5"></circle><path d="M2.5 10 H17.5 M10 2.5 C7 5.5 7 14.5 10 17.5 C13 14.5 13 5.5 10 2.5" stroke="#0b7ce6" stroke-width="1.5"></path></svg>
+      <div class="text-[12px] text-[#3d5573] mt-1.5">國際運費</div>
+      <div class="text-[12px] font-bold text-[#e02929] mt-1">首重免運<span class="mx-0.5 text-[#f0c1c1]">|</span>續重¥80/100g</div>
+    </div>
+    <div class="text-center px-1">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none" class="mx-auto"><path d="M3 6 L10 2.5 L17 6 V14 L10 17.5 L3 14 Z M3 6 L10 9.5 L17 6 M10 9.5 V17.5" stroke="#0b7ce6" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+      <div class="text-[12px] text-[#3d5573] mt-1.5">抵達日本倉</div>
+      <div class="text-[13px] font-bold text-[#0b7ce6] mt-1">3–5 天</div>
+    </div>
+  </section>
+
+  <!-- 日本 → TokyoDoor → 台湾 物流线(原生重建) -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
+    <div class="flex items-start px-3">
+      <div class="text-center shrink-0"><img src="assets/pd-node-jp.png" alt="日本" class="w-[26px] h-auto mx-auto"><div class="text-[14px] font-medium text-[#12233d] mt-1">日本</div></div>
+      <i class="flex-1 border-t-2 border-dashed border-[#a8d2f5] mt-3 mx-2"></i>
+      <div class="text-center shrink-0"><img src="assets/pd-node-td.png" alt="TokyoDoor" class="w-[26px] h-auto mx-auto"><div class="text-[14px] font-medium text-[#12233d] mt-1"><span class="text-[#0b7ce6]">T</span>okyo<span class="text-[#e02929]">D</span>oor</div></div>
+      <i class="flex-1 border-t-2 border-dashed border-[#a8d2f5] mt-3 mx-2"></i>
+      <div class="text-center shrink-0"><img src="assets/pd-node-tw.png" alt="台灣" class="w-[26px] h-auto mx-auto"><div class="text-[14px] font-medium text-[#12233d] mt-1">台灣</div></div>
+    </div>
+    <div class="grid grid-cols-2 gap-2.5 mt-3">
+      <span class="text-center text-[12px] font-bold text-[#0b7ce6] bg-[#e8f2fd] rounded-lg py-2">日本國內運費<span class="mx-1 text-[#bcd9f7]">|</span>免運費</span>
+      <span class="text-center text-[12px] font-bold text-[#8a6a3a] bg-[#f5efdd] rounded-lg py-2">國際物流運費<span class="mx-1 text-[#d8cba8]">|</span>點擊估價</span>
+    </div>
+  </section>
 
   <!-- 描述 tabs van-tabs -->
   <section class="mx-3 mt-3 bg-white rounded-2xl p-3.5">
