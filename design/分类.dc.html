@@ -36,7 +36,7 @@ input::placeholder{color:#9db1c7}
       <a href="搜索.dc.html" class="flex-1 flex items-center gap-2 border-[1.5px] border-[#c8d8ea] rounded-xl px-2.5 bg-white min-w-0">
         <img src="assets/ic-search.png" alt="" class="w-[18px] h-[18px]">
         <span class="flex-1 text-[13px] h-10 leading-10 text-[#9db1c7] truncate">搜尋日本商品、品牌或貼上網址</span>
-        <img src="assets/ic-trans.png" alt="原/譯" class="h-6 w-auto shrink-0">
+        <span class="shrink-0 cursor-pointer" onClick="{{ toggleTrans }}"><sc-if value="{{ transOriginal }}" hint-placeholder-val="{{ true }}"><img src="assets/ic-trans-original.png" alt="原文" class="h-6 w-auto"></sc-if><sc-if value="{{ transJa }}" hint-placeholder-val="{{ false }}"><img src="assets/ic-trans-ja.png" alt="譯文" class="h-6 w-auto"></sc-if></span>
       </a>
       <button class="bg-[#0b7ce6] text-white rounded-xl text-[15px] font-bold px-[18px] shadow-[0_3px_8px_rgba(11,124,230,.35)]" style="font-family:'Noto Sans TC',sans-serif">搜尋</button>
     </div>
@@ -93,5 +93,17 @@ input::placeholder{color:#9db1c7}
   </nav>
 </div>
 </x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { transJa: false };
+  renderVals() {
+    return {
+      transOriginal: !this.state.transJa,
+      transJa: this.state.transJa,
+      toggleTrans: () => this.setState({ transJa: !this.state.transJa }),
+    };
+  }
+}
+</script>
 </body>
 </html>
