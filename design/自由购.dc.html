@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#dfe9f5}
+body{font-family:'Noto Sans TC',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0b7ce6;text-decoration:none}
+a:hover{color:#0966c2}
+input::placeholder,textarea::placeholder{color:#9db1c7}
+</style>
+</helmet>
+<div class="max-w-[430px] mx-auto min-h-screen relative pb-[142px] bg-gradient-to-b from-[#eef4fb] to-[#f0f5fb]" data-screen-label="自由购">
+  <!-- 顶部栏 van-nav-bar -->
+  <header class="bg-white px-3.5 py-3 sticky top-0 z-50 flex items-center gap-3 shadow-[0_1px_0_rgba(11,60,120,.06)]">
+    <a href="首页.dc.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="#12233d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+    <div>
+      <div class="text-xs text-[#7a90a8]"><a href="首页.dc.html" class="text-[#7a90a8]">首頁</a> › 自由購</div>
+      <h1 class="m-0 text-[20px] font-black text-[#12233d]">填寫代購單 <span class="text-xs font-normal text-[#7a90a8]">共 2 件商品</span></h1>
+    </div>
+  </header>
+
+  <!-- 步骤条 van-steps -->
+  <div class="mx-3 mt-3 bg-white rounded-2xl px-6 py-4">
+    <div class="flex items-center">
+      <span class="w-9 h-9 rounded-full border-2 border-[#0b7ce6] text-[#0b7ce6] font-bold flex items-center justify-center text-sm shrink-0">1</span>
+      <i class="flex-1 h-[2px] bg-[#dbe7f5]"></i>
+      <span class="w-9 h-9 rounded-full border-2 border-[#dbe7f5] text-[#9db1c7] font-bold flex items-center justify-center text-sm shrink-0">2</span>
+      <i class="flex-1 h-[2px] bg-[#dbe7f5]"></i>
+      <span class="w-9 h-9 rounded-full border-2 border-[#dbe7f5] text-[#9db1c7] font-bold flex items-center justify-center text-sm shrink-0">3</span>
+    </div>
+    <div class="flex mt-2 text-[12px]">
+      <span class="flex-1 text-left font-bold text-[#0b7ce6]">填寫代購單</span>
+      <span class="flex-1 text-center text-[#9db1c7]">確認訂單</span>
+      <span class="flex-1 text-right text-[#9db1c7]">完成付款</span>
+    </div>
+  </div>
+
+  <!-- 规则提示 van-notice-bar -->
+  <div class="mx-3 mt-3 bg-[#e8f2fd] rounded-2xl px-3.5 py-3">
+    <div class="flex items-center gap-2">
+      <svg width="18" height="18" viewBox="0 0 18 18" class="shrink-0"><circle cx="9" cy="9" r="7.5" stroke="#0b7ce6" stroke-width="1.5" fill="none"></circle><path d="M9 5.2 v4.6 M9 12.2 v.6" stroke="#0b7ce6" stroke-width="1.7" stroke-linecap="round"></path></svg>
+      <b class="text-[13px] font-bold text-[#0b7ce6]">一單最多 10 件,且需為同一店鋪</b>
+    </div>
+    <div class="text-[12px] text-[#3d5573] mt-1.5 pl-[26px]">不同店鋪請分開下單,以免無法合併寄送。</div>
+  </div>
+
+  <!-- 煤炉特殊规则提示位 -->
+  <div class="mx-3 mt-2.5 bg-[#fdf3e0] rounded-2xl px-3.5 py-3 border border-[#f0dcb4]">
+    <div class="flex items-center gap-2">
+      <svg width="18" height="18" viewBox="0 0 18 18" class="shrink-0"><path d="M9 2.2 L16.4 15 H1.6 Z" stroke="#b8862a" stroke-width="1.5" fill="none" stroke-linejoin="round"></path><path d="M9 7 v3.4 M9 12.4 v.6" stroke="#b8862a" stroke-width="1.7" stroke-linecap="round"></path></svg>
+      <b class="text-[13px] font-bold text-[#8a6a3a]">Mercari(煤爐)商品限制</b>
+    </div>
+    <div class="text-[12px] text-[#8a6a3a] mt-1.5 pl-[26px]">一單只能包含 1 件煤爐商品,且不可與其它商品混單。</div>
+  </div>
+
+  <!-- 商品 1:解析成功态 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl px-3.5 py-4">
+    <div class="flex items-center">
+      <b class="text-[15px] font-bold text-[#12233d]">商品 1</b>
+      <span class="ml-auto flex items-center gap-1 text-[13px] text-[#9db1c7] cursor-pointer">
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2.5 3.5 h9 M5.5 3.5 V2.2 h3 V3.5 M3.6 3.5 l.6 8.3 h5.6 l.6-8.3" stroke="#9db1c7" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>刪除
+      </span>
+    </div>
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-3.5"><span class="text-[#e02929]">*</span> 商品連結</label>
+    <div class="flex gap-2 mt-2">
+      <input type="url" inputmode="url" value="https://jp.mercari.com/item/m39684938072" class="flex-1 box-border border border-[#dbe7f5] rounded-xl px-3 h-11 text-[13px] outline-none min-w-0">
+      <button class="shrink-0 bg-[#eef4fb] text-[#9db1c7] rounded-xl text-[14px] font-bold px-4 border-none" style="font-family:'Noto Sans TC',sans-serif">已解析</button>
+    </div>
+
+    <!-- 解析成功:自动带入的商品卡 -->
+    <div class="flex gap-2.5 bg-[#f4f9fe] rounded-xl p-2.5 mt-2.5">
+      <img src="assets/th-chiikawa.png" alt="" class="w-14 h-14 rounded-lg object-cover shrink-0">
+      <div class="min-w-0 flex-1">
+        <div class="text-[13px] text-[#12233d] leading-snug overflow-hidden text-ellipsis whitespace-nowrap">ちいかわ Tシャツ SAY COOL 黑色 M 新品未使用</div>
+        <div class="flex items-center gap-1.5 mt-1.5">
+          <span class="text-[11px] text-white bg-[#e02929] rounded px-1.5 py-0.5">Mercari</span>
+          <span class="text-[11px] text-[#06c755]">● 解析成功</span>
+        </div>
+      </div>
+    </div>
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-4">規格</label>
+    <input type="text" placeholder="顏色、尺寸等(選填)" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3 h-11 text-[13px] mt-2 outline-none">
+
+    <div class="flex gap-2.5 mt-4">
+      <div class="flex-1 min-w-0">
+        <label class="block text-[14px] font-bold text-[#12233d]"><span class="text-[#e02929]">*</span> 單價(日圓)</label>
+        <div class="flex items-center border border-[#dbe7f5] rounded-xl px-3 h-11 mt-2 bg-white">
+          <span class="text-[13px] text-[#7a90a8] mr-1">¥</span>
+          <input type="text" inputmode="numeric" value="3,200" class="flex-1 border-none outline-none text-[13px] min-w-0">
+        </div>
+      </div>
+      <div class="w-[126px] shrink-0">
+        <label class="block text-[14px] font-bold text-[#12233d]"><span class="text-[#e02929]">*</span> 數量</label>
+        <!-- 步进器 van-stepper -->
+        <div class="flex items-center border border-[#dbe7f5] rounded-xl h-11 mt-2 bg-white">
+          <span class="w-9 text-center text-[18px] text-[#7a90a8] cursor-pointer select-none">−</span>
+          <span class="flex-1 text-center text-[14px] font-bold text-[#12233d]">1</span>
+          <span class="w-9 text-center text-[18px] text-[#0b7ce6] cursor-pointer select-none">＋</span>
+        </div>
+      </div>
+    </div>
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-4">商品名稱</label>
+    <input type="text" value="ちいかわ Tシャツ SAY COOL 黑色 M" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3 h-11 text-[13px] mt-2 outline-none">
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-4">備註</label>
+    <textarea rows="2" placeholder="對商品的特殊要求(選填)" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3 py-2.5 text-[13px] mt-2 outline-none resize-none"></textarea>
+  </section>
+
+  <!-- 商品 2:未解析 / 解析中 / 解析失败 三态 -->
+  <section class="mx-3 mt-3 bg-white rounded-2xl px-3.5 py-4">
+    <div class="flex items-center">
+      <b class="text-[15px] font-bold text-[#12233d]">商品 2</b>
+      <span class="ml-auto flex items-center gap-1 text-[13px] text-[#9db1c7] cursor-pointer">
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2.5 3.5 h9 M5.5 3.5 V2.2 h3 V3.5 M3.6 3.5 l.6 8.3 h5.6 l.6-8.3" stroke="#9db1c7" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>刪除
+      </span>
+    </div>
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-3.5"><span class="text-[#e02929]">*</span> 商品連結</label>
+    <div class="flex gap-2 mt-2">
+      <input type="url" inputmode="url" placeholder="貼上商品網址" class="flex-1 box-border border border-[#dbe7f5] rounded-xl px-3 h-11 text-[13px] outline-none min-w-0">
+      <button class="shrink-0 bg-[#0b7ce6] text-white rounded-xl text-[14px] font-bold px-4 border-none shadow-[0_3px_8px_rgba(11,124,230,.35)] cursor-pointer" style="font-family:'Noto Sans TC',sans-serif" onClick="{{ nextParse }}">解析</button>
+    </div>
+
+    <!-- 解析中 -->
+    <sc-if value="{{ parsing }}" hint-placeholder-val="{{ false }}">
+      <div class="flex items-center gap-2 bg-[#f4f9fe] rounded-xl px-3 py-2.5 mt-2.5">
+        <i class="w-3.5 h-3.5 rounded-full border-2 border-[#c8ddf3] border-t-[#0b7ce6] block"></i>
+        <span class="text-[12px] text-[#3d5573]">解析中,請稍候…</span>
+      </div>
+    </sc-if>
+
+    <!-- 解析失败 -->
+    <sc-if value="{{ parseFailed }}" hint-placeholder-val="{{ false }}">
+      <div class="bg-[#fdeef0] rounded-xl px-3 py-2.5 mt-2.5">
+        <div class="flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 15 15" class="shrink-0"><circle cx="7.5" cy="7.5" r="6.4" stroke="#e02929" stroke-width="1.4" fill="none"></circle><path d="M5.3 5.3 L9.7 9.7 M9.7 5.3 L5.3 9.7" stroke="#e02929" stroke-width="1.4" stroke-linecap="round"></path></svg>
+          <span class="text-[12px] font-bold text-[#e02929]">解析失敗,無法取得商品資料</span>
+        </div>
+        <div class="text-[12px] text-[#a35b5b] mt-1 pl-[23px]">請確認網址是否正確,或手動填寫下方欄位。</div>
+      </div>
+    </sc-if>
+
+    <!-- 未解析:必填校验错误示例 -->
+    <sc-if value="{{ parseIdle }}" hint-placeholder-val="{{ true }}">
+      <div class="flex items-center gap-1.5 mt-2">
+        <svg width="14" height="14" viewBox="0 0 15 15" class="shrink-0"><circle cx="7.5" cy="7.5" r="6.4" stroke="#e02929" stroke-width="1.4" fill="none"></circle><path d="M7.5 4.3 v4 M7.5 10.3 v.6" stroke="#e02929" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        <span class="text-[12px] text-[#e02929]">請填寫商品連結</span>
+      </div>
+    </sc-if>
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-4">規格</label>
+    <input type="text" placeholder="顏色、尺寸等(選填)" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3 h-11 text-[13px] mt-2 outline-none">
+
+    <div class="flex gap-2.5 mt-4">
+      <div class="flex-1 min-w-0">
+        <label class="block text-[14px] font-bold text-[#12233d]"><span class="text-[#e02929]">*</span> 單價(日圓)</label>
+        <div class="flex items-center border border-[#e02929] rounded-xl px-3 h-11 mt-2 bg-white">
+          <span class="text-[13px] text-[#7a90a8] mr-1">¥</span>
+          <input type="text" inputmode="numeric" placeholder="0" class="flex-1 border-none outline-none text-[13px] min-w-0">
+        </div>
+        <div class="text-[12px] text-[#e02929] mt-1">必填</div>
+      </div>
+      <div class="w-[126px] shrink-0">
+        <label class="block text-[14px] font-bold text-[#12233d]"><span class="text-[#e02929]">*</span> 數量</label>
+        <div class="flex items-center border border-[#dbe7f5] rounded-xl h-11 mt-2 bg-white">
+          <span class="w-9 text-center text-[18px] text-[#c8d8ea] cursor-not-allowed select-none">−</span>
+          <span class="flex-1 text-center text-[14px] font-bold text-[#12233d]">1</span>
+          <span class="w-9 text-center text-[18px] text-[#0b7ce6] cursor-pointer select-none">＋</span>
+        </div>
+      </div>
+    </div>
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-4">商品名稱</label>
+    <input type="text" placeholder="解析成功後自動帶入,亦可自行填寫" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3 h-11 text-[13px] mt-2 outline-none">
+
+    <label class="block text-[14px] font-bold text-[#12233d] mt-4">備註</label>
+    <textarea rows="2" placeholder="對商品的特殊要求(選填)" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3 py-2.5 text-[13px] mt-2 outline-none resize-none"></textarea>
+  </section>
+
+  <!-- 新增商品 -->
+  <div class="mx-3 mt-3">
+    <button class="w-full box-border bg-white border-[1.5px] border-dashed border-[#a8cdf0] text-[#0b7ce6] rounded-2xl py-3.5 text-[15px] font-bold cursor-pointer" style="font-family:'Noto Sans TC',sans-serif">＋ 新增商品</button>
+    <div class="text-center text-[12px] text-[#9db1c7] mt-2">還可新增 8 件(上限 10 件)</div>
+  </div>
+
+  <!-- 底部操作栏 van-goods-action -->
+  <div class="fixed bottom-[76px] left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-[#e6eef7] px-3.5 py-2.5 flex items-center gap-3 z-[55]">
+    <div class="min-w-0">
+      <div class="text-[11px] text-[#7a90a8]">商品合計</div>
+      <div class="text-[19px] font-black text-[#e02929] leading-tight">¥3,200 <span class="text-[11px] font-normal text-[#7a90a8]">≈ NT$672</span></div>
+    </div>
+    <button class="ml-auto shrink-0 bg-[#0b7ce6] text-white rounded-xl text-[16px] font-bold px-7 py-3 border-none shadow-[0_3px_8px_rgba(11,124,230,.35)] cursor-pointer" style="font-family:'Noto Sans TC',sans-serif">送出代購單</button>
+  </div>
+
+  <!-- 底部 TabBar van-tabbar -->
+  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white border-t border-[#e6eef7] flex pt-2 pb-3 z-[60]">
+    <a href="首页.dc.html" class="flex-1 text-center"><img src="assets/tab-home-off.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">首頁</span></a>
+    <a href="分类.dc.html" class="flex-1 text-center"><img src="assets/tab-grid-off.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">分類</span></a>
+    <a href="自由购.dc.html" class="flex-1 text-center"><img src="assets/tab-freebuy-on.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 font-bold text-[#0b7ce6]">自由購</span></a>
+    <a href="购物车.dc.html" class="flex-1 text-center"><img src="assets/tab-cart-off.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">購物車</span></a>
+    <a href="我的.dc.html" class="flex-1 text-center"><img src="assets/tab-user-off.png" alt="" class="h-[26px] w-auto mx-auto"><span class="block text-[11px] mt-0.5 text-[#7a90a8]">我的</span></a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { parse: 'idle' };
+  renderVals() {
+    const order = ['idle', 'parsing', 'failed'];
+    return {
+      parseIdle: this.state.parse === 'idle',
+      parsing: this.state.parse === 'parsing',
+      parseFailed: this.state.parse === 'failed',
+      nextParse: () => this.setState({
+        parse: order[(order.indexOf(this.state.parse) + 1) % order.length],
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>
