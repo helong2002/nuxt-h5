@@ -130,13 +130,13 @@ input::placeholder{color:#9db1c7}
         <input type="password" placeholder="請再次輸入密碼" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3.5 h-12 text-[14px] outline-none mt-2">
 
         <label class="block text-[15px] font-bold text-[#12233d] mt-5"><span class="text-[#e02929]">*</span> 性別</label>
-        <div class="flex items-center border border-[#dbe7f5] rounded-xl px-3.5 h-12 mt-2 bg-white"><span class="flex-1 text-[14px] text-[#26415f]">請選擇</span><svg width="12" height="7" viewBox="0 0 12 7"><path d="M1 1 L6 6 L11 1" stroke="#7a90a8" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg></div>
+        <div class="flex items-center border border-[#dbe7f5] rounded-xl px-3.5 h-12 mt-2 bg-white cursor-pointer" onClick="{{ openGender }}"><span class="flex-1 text-[14px] text-[#9db1c7]">請選擇</span><svg width="12" height="7" viewBox="0 0 12 7"><path d="M1 1 L6 6 L11 1" stroke="#7a90a8" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg></div>
 
         <label class="block text-[15px] font-bold text-[#12233d] mt-5"><span class="text-[#e02929]">*</span> 出生日期</label>
         <input type="text" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3.5 h-12 text-[14px] outline-none mt-2">
 
         <label class="block text-[15px] font-bold text-[#12233d] mt-5"><span class="text-[#e02929]">*</span> 您是從哪個管道認識 TokyoDoor?</label>
-        <div class="flex items-center border border-[#dbe7f5] rounded-xl px-3.5 h-12 mt-2 bg-white"><span class="flex-1 text-[14px] text-[#26415f]">請選擇</span><svg width="12" height="7" viewBox="0 0 12 7"><path d="M1 1 L6 6 L11 1" stroke="#7a90a8" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg></div>
+        <div class="flex items-center border border-[#dbe7f5] rounded-xl px-3.5 h-12 mt-2 bg-white cursor-pointer" onClick="{{ openChannel }}"><span class="flex-1 text-[14px] text-[#9db1c7]">請選擇</span><svg width="12" height="7" viewBox="0 0 12 7"><path d="M1 1 L6 6 L11 1" stroke="#7a90a8" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg></div>
 
         <button class="block w-full mt-7 bg-[#0b7ce6] text-white text-center font-bold text-[17px] rounded-xl py-3.5 border-none shadow-[0_4px_12px_rgba(11,124,230,.35)]" style="font-family:'Noto Sans TC',sans-serif">下一步</button>
 
@@ -145,11 +145,48 @@ input::placeholder{color:#9db1c7}
       </div>
     </div>
   </sc-if>
+
+  <!-- 性别选择器 van-picker -->
+  <sc-if value="{{ genderOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="fixed inset-0 z-[80] bg-black/40" onClick="{{ closePicker }}"></div>
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white rounded-t-3xl z-[90] pb-8">
+      <div class="flex items-center px-4 py-3.5 border-b border-[#eef4fb]">
+        <span class="text-[14px] text-[#7a90a8] cursor-pointer" onClick="{{ closePicker }}">取消</span>
+        <b class="flex-1 text-center text-[16px] font-bold text-[#12233d]">性別</b>
+        <span class="text-[14px] font-bold text-[#0b7ce6] cursor-pointer" onClick="{{ closePicker }}">確認</span>
+      </div>
+      <div class="py-2">
+        <div class="text-center text-[17px] font-bold text-[#0b7ce6] py-3">男</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">女</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">保密</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- 认识管道选择器 van-picker -->
+  <sc-if value="{{ channelOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="fixed inset-0 z-[80] bg-black/40" onClick="{{ closePicker }}"></div>
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white rounded-t-3xl z-[90] pb-8">
+      <div class="flex items-center px-4 py-3.5 border-b border-[#eef4fb]">
+        <span class="text-[14px] text-[#7a90a8] cursor-pointer" onClick="{{ closePicker }}">取消</span>
+        <b class="flex-1 text-center text-[16px] font-bold text-[#12233d]">認識管道</b>
+        <span class="text-[14px] font-bold text-[#0b7ce6] cursor-pointer" onClick="{{ closePicker }}">確認</span>
+      </div>
+      <div class="py-2">
+        <div class="text-center text-[17px] font-bold text-[#0b7ce6] py-3">Facebook</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">Instagram</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">YouTube</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">Google搜尋</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">親友推薦</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">其他</div>
+      </div>
+    </div>
+  </sc-if>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { step: 1, codeSent: false };
+  state = { step: 1, codeSent: false, picker: null };
   renderVals() {
     return {
       step1: this.state.step === 1,
@@ -159,6 +196,11 @@ class Component extends DCLogic {
       sendCode: () => this.setState({ codeSent: true }),
       goStep2: () => this.setState({ step: 2 }),
       goStep1: () => this.setState({ step: 1 }),
+      genderOpen: this.state.picker === 'gender',
+      channelOpen: this.state.picker === 'channel',
+      openGender: () => this.setState({ picker: 'gender' }),
+      openChannel: () => this.setState({ picker: 'channel' }),
+      closePicker: () => this.setState({ picker: null }),
     };
   }
 }
