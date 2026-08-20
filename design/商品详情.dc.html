@@ -166,11 +166,27 @@ a:hover{color:#0966c2}
         <i class="block border-t-2 border-dashed border-[#4aa9e8]"></i>
         <div class="bg-[#ebf7fc] rounded-2xl p-3.5 mt-3.5">
           <div class="text-[14px] font-bold text-[#12233d]"><span class="text-[#e02929] mr-1">*</span>收貨國家/地區</div>
-          <div class="flex items-center bg-white rounded-xl px-3 py-2.5 mt-2.5">
+          <div class="flex items-center bg-white rounded-xl px-3 py-2.5 mt-2.5 cursor-pointer" onClick="{{ openCountry }}">
             <span class="flex-1 text-[13px] text-[#9db1c7]">請輸入收貨國家</span>
             <svg width="12" height="7" viewBox="0 0 12 7"><path d="M1 1 L6 6 L11 1" stroke="#7a90a8" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg>
           </div>
         </div>
+        <!-- 收货国家选择器 van-picker -->
+        <sc-if value="{{ countryOpen }}" hint-placeholder-val="{{ false }}">
+          <div class="fixed inset-0 z-[100] bg-black/40" onClick="{{ closeCountry }}"></div>
+          <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white rounded-t-3xl z-[110] pb-8">
+            <div class="flex items-center px-4 py-3.5 border-b border-[#eef4fb]">
+              <span class="text-[14px] text-[#7a90a8] cursor-pointer" onClick="{{ closeCountry }}">取消</span>
+              <b class="flex-1 text-center text-[16px] font-bold text-[#12233d]">收貨國家/地區</b>
+              <span class="text-[14px] font-bold text-[#0b7ce6] cursor-pointer" onClick="{{ closeCountry }}">確認</span>
+            </div>
+            <div class="py-2">
+              <div class="text-center text-[17px] font-bold text-[#0b7ce6] py-3">台灣</div>
+              <div class="text-center text-[17px] text-[#26415f] py-3">香港</div>
+              <div class="text-center text-[17px] text-[#26415f] py-3">馬來西亞</div>
+            </div>
+          </div>
+        </sc-if>
         <div class="bg-[#ebf7fc] rounded-2xl p-3.5 mt-3">
           <div class="text-[14px] font-bold text-[#12233d]"><span class="text-[#e02929] mr-1">*</span>包裹重量(g)</div>
           <input type="text" placeholder="g (-kg)" class="w-full box-border border-none outline-none bg-white rounded-xl px-3 py-2.5 text-[13px] mt-2.5">
@@ -207,12 +223,15 @@ a:hover{color:#0966c2}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { estimateOpen: false };
+  state = { estimateOpen: false, countryOpen: false };
   renderVals() {
     return {
       estimateOpen: this.state.estimateOpen,
       openEstimate: () => this.setState({ estimateOpen: true }),
       closeEstimate: () => this.setState({ estimateOpen: false }),
+      countryOpen: this.state.countryOpen,
+      openCountry: () => this.setState({ countryOpen: true }),
+      closeCountry: () => this.setState({ countryOpen: false }),
     };
   }
 }

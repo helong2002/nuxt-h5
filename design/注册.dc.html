@@ -103,7 +103,7 @@ input::placeholder{color:#9db1c7}
         <input type="text" placeholder="請輸入姓名" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3.5 h-12 text-[14px] outline-none mt-2">
 
         <label class="block text-[15px] font-bold text-[#12233d] mt-5"><span class="text-[#e02929]">*</span> 國家/地區</label>
-        <div class="flex items-center border border-[#dbe7f5] rounded-xl px-3.5 h-12 mt-2 bg-white"><span class="flex-1 text-[14px] text-[#26415f]">請選擇</span></div>
+        <div class="flex items-center border border-[#dbe7f5] rounded-xl px-3.5 h-12 mt-2 bg-white cursor-pointer" onClick="{{ openCountry }}"><span class="flex-1 text-[14px] text-[#9db1c7]">請選擇</span><svg width="12" height="7" viewBox="0 0 12 7"><path d="M1 1 L6 6 L11 1" stroke="#7a90a8" stroke-width="1.5" fill="none" stroke-linecap="round"></path></svg></div>
 
         <label class="block text-[15px] font-bold text-[#12233d] mt-5"><span class="text-[#e02929]">*</span> 省/直轄市</label>
         <input type="text" placeholder="請輸入所在地" class="w-full box-border border border-[#dbe7f5] rounded-xl px-3.5 h-12 text-[14px] outline-none mt-2">
@@ -142,6 +142,23 @@ input::placeholder{color:#9db1c7}
 
         <div class="text-center text-[13px] text-[#3d5573] mt-4">注册即表示同意 <a href="注册.dc.html">服务条款与隐私权政策</a></div>
         <div class="text-center text-[15px] text-[#26415f] mt-5 pb-2">已经有帐号? <a href="登录.dc.html" class="font-bold">立即登入</a></div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- 国家/地区选择器 van-picker -->
+  <sc-if value="{{ countryOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="fixed inset-0 z-[80] bg-black/40" onClick="{{ closePicker }}"></div>
+    <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-white rounded-t-3xl z-[90] pb-8">
+      <div class="flex items-center px-4 py-3.5 border-b border-[#eef4fb]">
+        <span class="text-[14px] text-[#7a90a8] cursor-pointer" onClick="{{ closePicker }}">取消</span>
+        <b class="flex-1 text-center text-[16px] font-bold text-[#12233d]">國家/地區</b>
+        <span class="text-[14px] font-bold text-[#0b7ce6] cursor-pointer" onClick="{{ closePicker }}">確認</span>
+      </div>
+      <div class="py-2">
+        <div class="text-center text-[17px] font-bold text-[#0b7ce6] py-3">台灣</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">香港</div>
+        <div class="text-center text-[17px] text-[#26415f] py-3">馬來西亞</div>
       </div>
     </div>
   </sc-if>
@@ -198,8 +215,10 @@ class Component extends DCLogic {
       goStep1: () => this.setState({ step: 1 }),
       genderOpen: this.state.picker === 'gender',
       channelOpen: this.state.picker === 'channel',
+      countryOpen: this.state.picker === 'country',
       openGender: () => this.setState({ picker: 'gender' }),
       openChannel: () => this.setState({ picker: 'channel' }),
+      openCountry: () => this.setState({ picker: 'country' }),
       closePicker: () => this.setState({ picker: null }),
     };
   }
