@@ -241,7 +241,7 @@ input::placeholder{color:#9db1c7}
         <!-- 货币选择 -->
         <div class="relative border-t border-[#eef4fb]">
           <div class="flex items-center gap-3 py-4 cursor-pointer" onClick="{{ toggleCur }}">
-            <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="9" stroke="#3d5573" stroke-width="1.5" fill="none"></circle></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8.2 21.1 A9.4 9.4 0 1 1 15.8 21.1" stroke="#3d5573" stroke-width="2" stroke-linecap="round"></path><path d="M8.4 6.9 L12 11.6 L15.6 6.9 M8 12.1 H16 M8 15.2 H16 M12 11.6 V17.6" stroke="#3d5573" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             <span class="flex-1 text-[15px] text-[#26415f]">台幣 (TWD)</span>
             <sc-if value="{{ curClosed }}" hint-placeholder-val="{{ true }}"><svg width="14" height="8" viewBox="0 0 14 8"><path d="M1 1 L7 7 L13 1" stroke="#7a90a8" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></sc-if>
             <sc-if value="{{ curOpen }}" hint-placeholder-val="{{ false }}"><svg width="14" height="8" viewBox="0 0 14 8"><path d="M1 7 L7 1 L13 7" stroke="#0b7ce6" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg></sc-if>
